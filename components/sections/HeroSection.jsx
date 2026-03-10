@@ -29,7 +29,7 @@ export function HeroSection() {
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-sans font-medium text-white leading-[1.1] tracking-tighter break-keep animate-fade-in-up delay-300 mb-8">
                         Navigating <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-500 font-light">
-                            Your Life's Data
+                            Your Life&apos;s Data
                         </span>
                     </h1>
 
