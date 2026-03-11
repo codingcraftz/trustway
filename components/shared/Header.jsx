@@ -1,7 +1,17 @@
+"use client";
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 // [페이지 목적] 전역으로 사용되는 상단 헤더 내비게이션 바 (Header)
 export function Header() {
+    const pathname = usePathname();
+
+    // 리틀리 모바일 뷰 페이지에서는 상단 글로벌 헤더를 숨김처리
+    if (pathname && pathname.match(/^\/experts\/[^\/]+\/mobile$/)) {
+        return null;
+    }
+
     return (
         <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 py-4">
             <div className="container mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between max-w-7xl">
