@@ -61,6 +61,37 @@ export default async function ExpertMobilePage({ params }) {
                         <span className="text-xs font-medium text-slate-700">{expert.mobileSlogan}</span>
                     </div>
                 </div>
+                {/* 전문가 간략 이력 섹션 */}
+                <div className="mx-6 mb-12 text-left bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                    <h3 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                        주요 이력 및 자격
+                    </h3>
+
+                    <div className="space-y-4">
+                        <div>
+                            <ul className="space-y-2">
+                                {expert.education.map((edu, index) => (
+                                    <li key={index} className="text-[13px] text-slate-600 font-light break-keep flex items-start gap-2">
+                                        <span className="text-slate-300 mt-0.5">-</span>
+                                        <span className="flex-1">{edu}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="pt-4 border-t border-slate-100">
+                            <div className="flex flex-wrap gap-2">
+                                {expert.certificates.map((cert, index) => (
+                                    <span key={index} className="px-2.5 py-1 bg-slate-50 border border-slate-100 text-slate-500 text-[11px] rounded-md font-medium break-keep">
+                                        {cert}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
                 {/* 링크 버튼 리스트 영역 */}
                 <div className="px-6 flex-grow flex flex-col gap-4">
@@ -87,14 +118,6 @@ export default async function ExpertMobilePage({ params }) {
                         <ArrowRight className="w-4 h-4 opacity-50" />
                     </Link>
 
-                    {/* Secondary Button: Expert Detail */}
-                    <Link
-                        href={`/experts/${expert.id}`}
-                        className="w-full bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 py-4 px-6 rounded-full font-medium shadow-sm flex items-center justify-between transition-all active:scale-[0.98]"
-                    >
-                        <span className="text-[15px]">전문가 상세 이력 보기</span>
-                        <ArrowRight className="w-4 h-4 text-slate-400" />
-                    </Link>
 
                     {/* Additional Info Box (Optional)*/}
                     <div className="mt-4 p-5 bg-slate-50 rounded-2xl border border-slate-100">
