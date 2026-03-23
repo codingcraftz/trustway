@@ -6,29 +6,42 @@ export async function middleware(request) {
         request,
     });
 
-    const supabase = createServerClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-        {
-            cookies: {
-                getAll() {
-                    return request.cookies.getAll();
-                },
-                setAll(cookiesToSet) {
-                    cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
-                    supabaseResponse = NextResponse.next({
-                        request,
-                    });
-                    cookiesToSet.forEach(({ name, value, options }) =>
-                        supabaseResponse.cookies.set(name, value, options)
-                    );
-                },
-            },
-        }
-    );
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-    // Fetch user to trigger cookie refresh if necessary
-    await supabase.auth.getUser();
+    try {
+        if (supabaseUrl && supabaseKey) {
+            const supabase = createServerClient(
+                supabaseUrl,
+                supabaseKey,
+                {
+                    cookies: {
+                        getAll() {
+                            return request.cookies.getAll();
+                        },
+                        setAll(cookiesToSet) {
+                            try {
+                                cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
+                                supabaseResponse = NextResponse.next({
+                                    request,
+                                });
+                                cookiesToSet.forEach(({ name, value, options }) =>
+                                    supabaseResponse.cookies.set(name, value, options)
+                                );
+                            } catch (e) {
+                                // 쿠키 셋팅 중 발생하는 에러 방어
+                            }
+                        },
+                    },
+                }
+            );
+
+            // Fetch user to trigger cookie refresh if necessary
+            await supabase.auth.getUser();
+        }
+    } catch (error) {
+        console.error("Middleware Supabase Error:", error);
+    }
 
     // Domain Rewrite Logic for office.trustway.kr
     const url = request.nextUrl.clone();

@@ -48,6 +48,12 @@ export function Header() {
                         Expertise
                     </Link>
                     <Link
+                        href="/location"
+                        className="text-[14px] font-semibold tracking-widest transition-colors hover:text-primary text-slate-600 uppercase"
+                    >
+                        Location
+                    </Link>
+                    <Link
                         href="/insights"
                         className="text-[14px] font-semibold tracking-widest transition-colors hover:text-primary text-slate-600 uppercase"
                     >
