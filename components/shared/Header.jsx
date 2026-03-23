@@ -7,8 +7,8 @@ import { usePathname } from 'next/navigation';
 export function Header() {
     const pathname = usePathname();
 
-    // 리틀리 모바일 뷰 페이지에서는 상단 글로벌 헤더를 숨김처리
-    if (pathname && pathname.match(/^\/experts\/[^\/]+\/mobile$/)) {
+    // 리틀리 모바일 뷰 페이지 및 사내 관리자 페이지(/office)에서는 상단 글로벌 헤더를 숨김처리
+    if (pathname && (pathname.match(/^\/experts\/[^\/]+\/mobile$/) || pathname.startsWith('/office'))) {
         return null;
     }
 

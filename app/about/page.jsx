@@ -39,11 +39,11 @@ export default function AboutPage() {
       <section className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         {/* Background Image / Pattern overlay */}
         <div className="absolute inset-0 bg-primary/95 z-10" />
-        <div 
+        <div
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80')] bg-cover bg-center z-0 opacity-50"
         />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] z-10" />
-        
+
         <div className="container relative z-20 mx-auto px-6 text-center">
           <motion.div
             initial="hidden"
@@ -65,7 +65,7 @@ export default function AboutPage() {
       {/* 2. Why Trustway? */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -76,7 +76,7 @@ export default function AboutPage() {
             <p className="text-slate-500 text-lg">트러스트웨이만의 차별화된 One-Stop 솔루션</p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
@@ -121,7 +121,7 @@ export default function AboutPage() {
       {/* 3. Service Portfolio */}
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-6 max-w-5xl">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -134,18 +134,18 @@ export default function AboutPage() {
 
           <Tabs defaultValue="personal" className="w-full">
             <div className="flex justify-center mb-12">
-              <TabsList className="grid w-full max-w-md grid-cols-2 p-1 bg-slate-200/50">
-                <TabsTrigger value="personal" className="text-base py-3 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md transition-all">
+              <TabsList className="grid w-full max-w-md grid-cols-2 p-1 bg-slate-200/50 rounded-xl h-auto min-h-14">
+                <TabsTrigger value="personal" className="text-base py-3 rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md transition-all">
                   개인 자산관리
                 </TabsTrigger>
-                <TabsTrigger value="corporate" className="text-base py-3 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md transition-all">
+                <TabsTrigger value="corporate" className="text-base py-3 rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md transition-all">
                   법인 경영 컨설팅
                 </TabsTrigger>
               </TabsList>
             </div>
-            
+
             <TabsContent value="personal" className="mt-0">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -169,7 +169,7 @@ export default function AboutPage() {
             </TabsContent>
 
             <TabsContent value="corporate" className="mt-0">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -198,7 +198,7 @@ export default function AboutPage() {
       {/* 4. People Section (팀 프로필) */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -223,11 +223,11 @@ export default function AboutPage() {
                 <Card className="h-full overflow-hidden border-slate-100 hover:shadow-xl transition-all duration-300">
                   <div className="relative h-64 w-full bg-slate-100 overflow-hidden">
                     {expert.image && (
-                      <Image 
+                      <Image
                         src={expert.image}
                         alt={expert.name}
                         fill
-                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        className="object-cover object-[50%_15%] transition-transform duration-500 group-hover:scale-105"
                       />
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -269,7 +269,7 @@ export default function AboutPage() {
       {/* 5. FAQ Section (아코디언 활용) */}
       <section className="py-24 bg-white border-t border-slate-100">
         <div className="container mx-auto px-6 max-w-3xl">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -316,12 +316,12 @@ export default function AboutPage() {
           <h2 className="text-xl md:text-2xl font-bold text-slate-700">함께하는 파트너사</h2>
           <p className="text-sm text-slate-500 mt-2">국내외 최고 수준의 금융 파트너들과 함께합니다</p>
         </div>
-        
+
         {/* 무한 롤링 배너 효과 */}
         <div className="relative w-full overflow-hidden flex whitespace-nowrap">
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-50 to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-50 to-transparent z-10" />
-          
+
           <motion.div
             className="flex gap-16 md:gap-24 items-center px-8"
             animate={{ x: ["0%", "-50%"] }}
