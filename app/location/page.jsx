@@ -119,6 +119,9 @@ export default function LocationPage() {
                         <p className="text-slate-600 leading-relaxed font-light break-keep">
                           제주특별자치도 제주시 월랑로 81
                         </p>
+                        <p className="text-[13px] font-medium text-primary mt-2 bg-primary/10 inline-block px-2.5 py-1 rounded-md">
+                          📍 제주 중앙병원 인근
+                        </p>
                       </div>
                     </div>
                   </CardContent>

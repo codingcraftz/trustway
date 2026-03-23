@@ -17,6 +17,7 @@ export const metadata = {
 };
 
 import { Header } from "@/components/shared/Header";
+import { Footer } from "@/components/shared/Footer";
 
 export default function RootLayout({ children }) {
   return (
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

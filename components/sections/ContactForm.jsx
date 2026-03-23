@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { createClient } from "@/lib/supabase/client";
 
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -15,6 +16,15 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+
+const formatPhoneNumber = (value) => {
+    if (!value) return "";
+    const cleaned = value.replace(/[^\d]/g, "");
+    if (cleaned.length <= 3) return cleaned;
+    if (cleaned.length <= 7) return `${cleaned.slice(0, 3)}-${cleaned.slice(3)}`;
+    // 사용자가 입력 중일 때 대시(-)가 부자연스럽게 이동하지 않도록 3-4-4 규칙을 기본 적용합니다.
+    return `${cleaned.slice(0, 3)}-${cleaned.slice(3, 7)}-${cleaned.slice(7, 11)}`;
+};
 
 const formSchema = z.object({
     name: z.string().min(2, { message: "이름은 2글자 이상이어야 합니다." }),
@@ -48,13 +58,32 @@ export function ContactForm() {
     });
 
     const onSubmit = async (data) => {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                setIsSubmitted(true);
-                reset();
-                resolve();
-            }, 1000);
-        });
+        const supabase = createClient();
+        
+        try {
+            const { error } = await supabase
+                .from('consulting_requests')
+                .insert([
+                    {
+                        name: data.name,
+                        phone: data.phone,
+                        category: data.category,
+                        privacy_consent: data.privacyConsent
+                    }
+                ]);
+
+            if (error) {
+                console.error("Supabase insert error:", error);
+                alert("접수 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
+                return;
+            }
+
+            setIsSubmitted(true);
+            reset();
+        } catch (err) {
+            console.error("Unexpected error:", err);
+            alert("접수 중 오류가 발생했습니다.");
+        }
     };
 
     return (
@@ -110,7 +139,12 @@ export function ContactForm() {
                                         <Input
                                             id="phone"
                                             placeholder="010-0000-0000"
-                                            {...register("phone")}
+                                            maxLength={13}
+                                            {...register("phone", {
+                                                onChange: (e) => {
+                                                    e.target.value = formatPhoneNumber(e.target.value);
+                                                }
+                                            })}
                                             className={`rounded-none border-0 border-b-2 border-slate-200 bg-transparent px-0 py-3 focus-visible:ring-0 focus-visible:border-primary text-lg font-light ${errors.phone ? "border-red-500" : ""}`}
                                         />
                                         {errors.phone && <p className="text-red-500 text-[11px] font-mono mt-2 tracking-wide uppercase">{errors.phone.message}</p>}
