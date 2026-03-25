@@ -109,7 +109,7 @@ export default async function ExpertMobilePage({ params }) {
                         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 hidden" style={{ backgroundImage: `url(${expert.backgroundImage})` }} />
                         <div className="absolute bg-[#E6D5B8] inset-0 bg-cover bg-top bg-no-repeat z-10" style={{ backgroundImage: `url(${expert.profileImage})` }} />
 
-                        <div className={`absolute inset-0 z-20 bg-gradient-to-t ${t.bgGradient} to-transparent`} />
+                        <div className={`absolute inset-x-0 bottom-0 h-[60%] z-20 bg-gradient-to-t ${t.bgGradient} to-transparent pointer-events-none`} />
 
                         <div className="absolute bottom-10 left-6 right-6 z-30 flex flex-col items-start gap-1">
                             <span className={`${t.pill} px-2.5 py-1 rounded-md text-[11px] font-bold tracking-widest border backdrop-blur-sm`}>
@@ -195,7 +195,7 @@ export default async function ExpertMobilePage({ params }) {
                     </section>
 
                     {/* 메시지 및 링크 리스트 영역 */}
-                    <section className={`relative z-40 ${t.bg} px-5 py-6 pb-12 w-full flex flex-col gap-5`}>
+                    <section className={`relative z-40 ${t.bg} px-5 py-6 pb-4 w-full flex flex-col gap-5`}>
                         <div className={`w-full bg-gradient-to-br ${t.cardBg} border backdrop-blur-xl rounded-[2rem] p-8 shadow-2xl relative overflow-hidden group`}>
                             <div className={`absolute -right-10 -top-10 w-40 h-40 ${t.cardGlow1} blur-3xl rounded-full`} />
                             <div className={`absolute -left-10 -bottom-10 w-40 h-40 ${t.cardGlow2} blur-3xl rounded-full`} />
@@ -238,10 +238,19 @@ export default async function ExpertMobilePage({ params }) {
                             })}
                         </div>
 
-                        <div className="w-full text-center mt-12 mb-6 opacity-60">
-                            <p className="text-[10px] text-white/50 font-mono tracking-widest uppercase">
-                                © Trustway Jeju. All rights reserved.
+                        <div className="w-full text-center mt-6 mb-2 pt-6 border-t border-white/5 flex flex-col items-center justify-center gap-2 opacity-90">
+                            <p className="text-[10px] text-white/50 font-mono tracking-widest uppercase mb-1">
+                                © {new Date().getFullYear()} Trustway.
                             </p>
+                            <div className="flex flex-col items-center gap-1.5 text-[11.5px] text-white/40 font-medium tracking-wide">
+                                <span className="text-white/60">페이지 관련 문의 및 버그제보</span>
+                                <span className="flex items-center gap-1">
+                                    Designed & Developed by <strong className="text-white/80 font-semibold text-[12px]">codingcraftz</strong>
+                                </span>
+                                <a href="mailto:codingcraftz@naver.com" className="text-[#E6D5B8]/80 hover:text-white underline underline-offset-4 decoration-[#E6D5B8]/30 transition-colors mt-0.5">
+                                    codingcraftz@gmail.com
+                                </a>
+                            </div>
                         </div>
                     </section>
                 </div>

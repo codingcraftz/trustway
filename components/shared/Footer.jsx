@@ -22,15 +22,15 @@ export function Footer() {
                         className="h-10 w-auto opacity-70 brightness-0 invert"
                     />
                     <p className="text-sm font-light text-slate-500">
-                        트러스트웨이 본부<br/>
+                        트러스트웨이 본부<br />
                         © {new Date().getFullYear()} TrustWay. All rights reserved.
                     </p>
                 </div>
-                
+
                 {/* 오른쪽 연락처 및 문의 정보 */}
                 <div className="flex flex-col items-center md:items-end space-y-3 text-sm">
                     <div className="text-center md:text-right">
-                        <p className="font-light mb-1">웹사이트 관련 도입 문의 및 버그 제보</p>
+                        <p className="font-light mb-1">웹사이트 관련 문의 및 버그 제보</p>
                         <a href="mailto:codingcraftz@gmail.com" className="font-semibold text-slate-300 hover:text-white transition-colors underline underline-offset-4 decoration-primary/50">
                             codingcraftz@gmail.com
                         </a>

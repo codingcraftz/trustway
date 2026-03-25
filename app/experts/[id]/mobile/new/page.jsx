@@ -2,7 +2,6 @@ import Image from "next/image";
 import { X, ChevronRight, Award, CheckCircle2, Building2, User, MessageCircle, Phone, Mail, FileText } from "lucide-react";
 import Link from "next/link";
 import { mobileExperts } from "@/lib/mobileExperts";
-import { experts } from "@/lib/data";
 
 export async function generateStaticParams() {
     return mobileExperts.map((expert) => ({
@@ -24,9 +23,8 @@ export default async function MobileCardTestPage({ params }) {
         );
     }
 
-    const fullData = experts.find(e => e.id === id || e.name === expert.name) || {};
-    const phoneNumber = fullData.phone || "+82 10-0000-0000";
-    const emailAddress = fullData.email || fullData.id + "@trustway.co.kr";
+    const phoneNumber = expert.phone || "+82 10-0000-0000";
+    const emailAddress = expert.email || `${id}@trustway.co.kr`;
 
     const kakaoLink = expert.links?.find(l => l.type === "kakao");
     const otherLinks = expert.links?.filter(l => l.type !== "kakao") || [];
@@ -216,8 +214,21 @@ export default async function MobileCardTestPage({ params }) {
 
                     </div>
 
-                    {/* 하단 패딩 여유분 */}
-                    <div className="h-10"></div>
+                    {/* 제작자 표시 풋터 영역 */}
+                    <div className="w-full text-center mt-8 mb-2 pt-8 border-t border-white/5 flex flex-col items-center justify-center gap-2 opacity-90">
+                        <p className="text-[10px] text-white/50 font-mono tracking-widest uppercase mb-1">
+                            © {new Date().getFullYear()} Trustway.
+                        </p>
+                        <div className="flex flex-col items-center gap-1.5 text-[11.5px] text-white/40 font-medium tracking-wide">
+                            <span className="text-white/60">페이지 관련 문의 및 버그제보</span>
+                            <span className="flex items-center gap-1">
+                                Designed & Developed by <strong className="text-white/80 font-semibold text-[12px]">codingcraftz</strong>
+                            </span>
+                            <a href="mailto:codingcraftz@naver.com" className="text-[#E6D5B8]/80 hover:text-white underline underline-offset-4 decoration-[#E6D5B8]/30 transition-colors mt-0.5">
+                                codingcraftz@gmail.com
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 {/* 하단 강력한 플로팅 액션 버튼 (애플 스타일의 둥근 플로팅 바) */}
