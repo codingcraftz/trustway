@@ -176,13 +176,13 @@ export default async function ExpertMobilePage({ params }) {
                         </div>
                         <div className="flex flex-col gap-5 w-full">
                             {expert.bullets.map((bullet, idx) => (
-                                <div key={idx} className="flex items-start gap-3 w-full group">
+                                <div key={idx} className="flex items-center gap-3 w-full group">
                                     {bullet.highlight ? (
-                                        <div className="mt-0.5 p-1.5 bg-[#E6D5B8]/20 rounded-full flex-shrink-0 border border-[#E6D5B8]/30 shadow-[0_0_12px_rgba(230,213,184,0.1)]">
+                                        <div className="p-1.5 bg-[#E6D5B8]/20 rounded-full flex-shrink-0 border border-[#E6D5B8]/30 shadow-[0_0_12px_rgba(230,213,184,0.1)]">
                                             <Award className="w-3.5 h-3.5 text-[#E6D5B8] relative z-10" strokeWidth={2.5} />
                                         </div>
                                     ) : (
-                                        <CheckCircle2 className={`w-4 h-4 mt-0.5 flex-shrink-0 ${t.iconDefault}`} />
+                                        <CheckCircle2 className={`w-4 h-4 flex-shrink-0 ${t.iconDefault}`} />
                                     )}
                                     <p className={`text-[14.5px] leading-relaxed break-keep tracking-wide ${bullet.highlight ? "text-[#E6D5B8] font-semibold" : `${t.textSubtitle} font-light`}`}>
                                         {bullet.text}
