@@ -2,11 +2,50 @@ import Image from "next/image";
 import { X, ChevronRight, Award, CheckCircle2, Building2, User, MessageCircle, Phone, Mail, FileText } from "lucide-react";
 import Link from "next/link";
 import { mobileExperts } from "@/lib/mobileExperts";
+import { MobileShareHeader } from "@/components/shared/MobileShareHeader";
 
 export async function generateStaticParams() {
     return mobileExperts.map((expert) => ({
         id: expert.id,
     }));
+}
+
+export async function generateMetadata({ params }) {
+    const { id } = await params;
+    const expert = mobileExperts.find((e) => e.id === id);
+
+    if (!expert) {
+        return { title: '전문가 프로필을 찾을 수 없습니다' };
+    }
+
+    const title = `${expert.title} ${expert.name}님의 모바일 명함`;
+    const description = `"${expert.quote}" - 프리미엄 자산관리 및 금융 컨설팅 전문가, ${expert.name} ${expert.title}의 모바일 명함입니다.`;
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            type: 'website',
+            siteName: 'Trustway',
+            locale: 'ko_KR',
+            images: [
+                {
+                    url: `https://www.trustway.kr${expert.profileImage}`,
+                    width: 800,
+                    height: 800,
+                    alt: `${expert.name} 프로필 사진`,
+                }
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description,
+            images: [`https://www.trustway.kr${expert.profileImage}`],
+        }
+    };
 }
 
 export default async function MobileCardTestPage({ params }) {
@@ -46,9 +85,16 @@ export default async function MobileCardTestPage({ params }) {
             <div className={`relative w-full h-full sm:h-[850px] sm:max-w-[420px] ${t.bg} sm:rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl ring-1 ring-white/10`}>
 
                 {/* 상단 닫기 버튼 (유리 질감) */}
-                <Link href={`/experts/${id}`} className="absolute top-6 left-5 z-50 w-10 h-10 bg-black/20 backdrop-blur-xl rounded-full flex items-center justify-center cursor-pointer active:scale-95 transition-transform border border-white/10 shadow-lg">
+                <Link href={`/experts/${id}`} className="absolute top-6 left-5 z-50 w-10 h-10 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center cursor-pointer active:scale-95 transition-transform border border-white/10 shadow-lg">
                     <X className="w-5 h-5 text-white/90" />
                 </Link>
+
+                {/* 우측 상단 공유하기 버튼 */}
+                <MobileShareHeader 
+                    expertName={expert.name} 
+                    expertTitle={expert.title} 
+                    className="absolute top-6 right-5 z-50" 
+                />
 
                 {/* 콘텐츠 영역 (스크롤) */}
                 <div className="flex-1 overflow-y-auto scrollbar-hide pb-36">
@@ -77,10 +123,10 @@ export default async function MobileCardTestPage({ params }) {
                                 트러스트웨이 제주본부
                             </p>
 
-                            <div className="flex gap-2.5 justify-center flex-wrap w-full">
-                                {expert.personalServices.slice(0, 3).map((service, idx) => (
-                                    <span key={idx} className="bg-white/5 text-white/80 text-[12px] px-3.5 py-2 rounded-xl font-medium border border-white/5 shadow-inner">
-                                        {service.split(" ")[0]}
+                            <div className="flex gap-2.5 justify-center flex-wrap w-full mt-2">
+                                {["재무설계", "증권", "보험", "연금"].map((kw, idx) => (
+                                    <span key={idx} className="bg-white/5 text-white/80 text-[12.5px] px-3.5 py-1.5 rounded-full font-medium border border-white/10 shadow-sm tracking-wide">
+                                        {kw}
                                     </span>
                                 ))}
                             </div>
@@ -140,13 +186,13 @@ export default async function MobileCardTestPage({ params }) {
                             </h3>
                             <div className="flex flex-col gap-4">
                                 {expert.bullets.map((bullet, idx) => (
-                                    <div key={idx} className="flex items-start gap-3.5 group">
+                                    <div key={idx} className="flex items-center gap-3.5 group">
                                         {bullet.highlight ? (
-                                            <div className="mt-0.5 p-1.5 bg-[#E6D5B8]/20 rounded-full flex-shrink-0 border border-[#E6D5B8]/30">
+                                            <div className="p-1.5 bg-[#E6D5B8]/20 rounded-full flex-shrink-0 border border-[#E6D5B8]/30">
                                                 <Award className="w-3.5 h-3.5 text-[#E6D5B8]" />
                                             </div>
                                         ) : (
-                                            <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white/20 flex-shrink-0 ml-2" />
+                                            <div className="w-1.5 h-1.5 rounded-full bg-white/20 flex-shrink-0 ml-2" />
                                         )}
                                         <p className={`text-[14px] leading-relaxed break-keep tracking-wide ${bullet.highlight ? "text-white font-semibold" : "text-[#8E8E93] font-medium"}`}>
                                             {bullet.text}
@@ -169,8 +215,8 @@ export default async function MobileCardTestPage({ params }) {
                                 </div>
                                 <ul className="flex flex-col gap-3.5">
                                     {expert.personalServices.map((item, i) => (
-                                        <li key={i} className="flex items-start gap-3">
-                                            <CheckCircle2 className="w-4 h-4 text-[#E6D5B8]/60 flex-shrink-0 mt-[2px]" />
+                                        <li key={i} className="flex items-center gap-3">
+                                            <CheckCircle2 className="w-4 h-4 text-[#E6D5B8]/60 flex-shrink-0" />
                                             <p className="text-white/80 text-[14px] font-medium leading-snug break-keep">{item}</p>
                                         </li>
                                     ))}
@@ -188,8 +234,8 @@ export default async function MobileCardTestPage({ params }) {
                                     </div>
                                     <ul className="flex flex-col gap-3.5">
                                         {expert.corporateServices.map((item, i) => (
-                                            <li key={i} className="flex items-start gap-3">
-                                                <CheckCircle2 className="w-4 h-4 text-[#E6D5B8]/60 flex-shrink-0 mt-[2px]" />
+                                            <li key={i} className="flex items-center gap-3">
+                                                <CheckCircle2 className="w-4 h-4 text-[#E6D5B8]/60 flex-shrink-0" />
                                                 <p className="text-white/80 text-[14px] font-medium leading-snug break-keep">{item}</p>
                                             </li>
                                         ))}

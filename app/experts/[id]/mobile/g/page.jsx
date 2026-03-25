@@ -1,11 +1,51 @@
-import { Upload, Bell, ChevronRight, MessageCircle, Award, CheckCircle2, ChevronDown, User, Building2, Check } from "lucide-react";
+import { Upload, Bell, ChevronRight, MessageCircle, Award, CheckCircle2, ChevronDown, User, Building2, Check, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { mobileExperts } from "@/lib/mobileExperts";
+import { MobileShareHeader } from "@/components/shared/MobileShareHeader";
 
 export async function generateStaticParams() {
     return mobileExperts.map((expert) => ({
         id: expert.id,
     }));
+}
+
+export async function generateMetadata({ params }) {
+    const { id } = await params;
+    const expert = mobileExperts.find((e) => e.id === id);
+
+    if (!expert) {
+        return { title: '전문가 프로필을 찾을 수 없습니다' };
+    }
+
+    const title = `${expert.title} ${expert.name}님의 모바일 명함`;
+    const description = `"${expert.quote}" - 프리미엄 자산관리 및 금융 컨설팅 전문가, ${expert.name} ${expert.title}의 모바일 명함입니다.`;
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            type: 'website',
+            siteName: 'Trustway',
+            locale: 'ko_KR',
+            images: [
+                {
+                    url: `https://www.trustway.kr${expert.profileImage}`,
+                    width: 800,
+                    height: 800,
+                    alt: `${expert.name} 프로필 사진`,
+                }
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description,
+            images: [`https://www.trustway.kr${expert.profileImage}`],
+        }
+    };
 }
 
 // 두 가지 테마 정의 (Navy / Gold)
@@ -94,15 +134,15 @@ export default async function ExpertMobilePage({ params }) {
                 {/* 1. 실제 스크롤이 일어나는 영역 (하단에 버튼 여백 pb-28 확보) */}
                 <div className="relative z-10 w-full h-full overflow-y-auto scroll-smooth scrollbar-hide pb-28">
 
-                    {/* 상단 액션 버튼 */}
-                    <header className="absolute top-0 left-0 right-0 w-full px-5 py-5 flex justify-between items-center z-50">
-                        <button className="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center shadow-lg hover:bg-black/60 transition-colors border border-white/10 active:scale-95">
-                            <Upload className="w-4 h-4 text-white" strokeWidth={2} />
-                        </button>
-                        <button className="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center shadow-lg hover:bg-black/60 transition-colors border border-white/10 active:scale-95">
-                            <Bell className="w-4 h-4 text-white" strokeWidth={2} />
-                        </button>
-                    </header>
+                    {/* 상단 액션 닫기(홈) 버튼 및 우측 공유 버튼 */}
+                    <Link href={`/experts/${id}`} className="absolute top-6 left-5 z-50 w-10 h-10 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center cursor-pointer active:scale-95 transition-transform border border-white/10 shadow-lg pointer-events-auto">
+                        <X className="w-5 h-5 text-white/90" strokeWidth={2} />
+                    </Link>
+                    <MobileShareHeader 
+                        expertName={expert.name} 
+                        expertTitle={expert.title} 
+                        className="absolute top-6 right-5 z-50 pointer-events-none" 
+                    />
 
                     {/* 히어로 영역 */}
                     <section className="relative w-full h-[55vh] min-h-[450px] shrink-0 bg-[#121214]">
@@ -168,8 +208,8 @@ export default async function ExpertMobilePage({ params }) {
                                 </div>
                                 <div className="flex flex-col gap-3">
                                     {expert.personalServices.map((item, i) => (
-                                        <div key={i} className="flex items-start gap-2.5">
-                                            <Check className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${t.personalIcon}`} strokeWidth={3} />
+                                        <div key={i} className="flex items-center gap-2.5">
+                                            <Check className={`w-3.5 h-3.5 shrink-0 ${t.personalIcon}`} strokeWidth={3} />
                                             <p className={`${t.textSubtitle} text-[13.5px] leading-snug break-keep`}>{item}</p>
                                         </div>
                                     ))}
@@ -184,8 +224,8 @@ export default async function ExpertMobilePage({ params }) {
                                 </div>
                                 <div className="flex flex-col gap-3">
                                     {expert.corporateServices.map((item, i) => (
-                                        <div key={i} className="flex items-start gap-2.5">
-                                            <Check className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${t.corpIcon}`} strokeWidth={3} />
+                                        <div key={i} className="flex items-center gap-2.5">
+                                            <Check className={`w-3.5 h-3.5 shrink-0 ${t.corpIcon}`} strokeWidth={3} />
                                             <p className={`${t.textSubtitle} text-[13.5px] leading-snug break-keep`}>{item}</p>
                                         </div>
                                     ))}
