@@ -62,33 +62,6 @@ const THEMES = {
         buttonHoverText: "group-hover:text-[#FDFBF7]",
         accentLine: "bg-[#D4AF37]",
         bottomGradient: "from-[#161412] via-[#161412]/95",
-    },
-    modern: {
-        // 프리미엄 핀테크 / 애플 스타일 (test-ui의 베이스)
-        bg: "bg-[#050505]",               
-        bgGradient: "from-[#050505] via-[#050505]/80",
-        pill: "bg-white/10 text-[#E6D5B8] border border-white/5",
-        quoteBorder: "border-[#E6D5B8]/30",
-        textQuote: "text-[#8E8E93]",
-        textName: "text-[#FFFFFF]",
-        textSubtitle: "text-[#8E8E93]",
-        iconDefault: "text-[#E6D5B8]/80",
-        cardBg: "from-[#121214] to-[#121214] border-white/[0.06]",
-        cardGlow1: "bg-[#E6D5B8]/10",
-        cardGlow2: "bg-[#FFFFFF]/5",
-        cardText: "text-[#FFFFFF]",
-        
-        personalCard: "bg-[#121214] border-white/5",
-        personalIconBg: "bg-[#E6D5B8]/10",
-        personalIcon: "text-[#E6D5B8]",
-        corpCard: "bg-white/[0.02] border-white/5",
-        corpIconBg: "bg-white/5",
-        corpIcon: "text-[#E6D5B8]",
-        
-        buttonBg: "bg-[#121214] hover:bg-[#1A1A1C] border-white/10 text-white/90",
-        buttonHoverText: "group-hover:text-white",
-        accentLine: "bg-[#E6D5B8]",
-        bottomGradient: "from-[#050505] via-[#050505]/95",
     }
 };
 
@@ -106,8 +79,8 @@ export default async function ExpertMobilePage({ params }) {
         );
     }
 
-    // test-ui (new) 에 사용된 초현대적 핀테크 색상(modern)을 주력 테마로 적용
-    const t = THEMES["modern"];
+    // 데이터에 세팅된 theme를 무시하고 기존버전(navy) 테마 사용
+    const t = THEMES["navy"];
     
     // 링크 분류: 카카오톡 버튼만 하단 고정 배열, 나머지는 스크롤 리스트
     const kakaoLink = expert.links.find(l => l.type === "kakao");

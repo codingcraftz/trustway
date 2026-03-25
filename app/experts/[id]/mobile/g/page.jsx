@@ -23,49 +23,22 @@ const THEMES = {
         cardGlow1: "bg-blue-500/10",
         cardGlow2: "bg-[#D4AF37]/5",
         cardText: "text-white/95",
-        
+
         personalCard: "bg-slate-800/30 border-slate-700/50",
         personalIconBg: "bg-blue-500/20",
         personalIcon: "text-blue-400",
         corpCard: "bg-[#D4AF37]/5 border-[#D4AF37]/20",
         corpIconBg: "bg-[#D4AF37]/20",
         corpIcon: "text-[#D4AF37]",
-        
+
         buttonBg: "bg-slate-800/50 hover:bg-slate-700/50 border-slate-700/50 text-slate-200",
         buttonHoverText: "group-hover:text-white",
         accentLine: "bg-[#D4AF37]",
         bottomGradient: "from-[#0A1120] via-[#0A1120]/95",
     },
     gold: {
-        // 고급스러운 차콜 브라운 베이스
-        bg: "bg-[#161412]",               
-        bgGradient: "from-[#161412] via-[#161412]/80",
-        pill: "bg-[#D4AF37]/10 text-[#D4AF37] border-[#D4AF37]/20",
-        quoteBorder: "border-[#C5A059]",
-        textQuote: "text-[#D9CDB8]",
-        textName: "text-[#FDFBF7]",
-        textSubtitle: "text-[#A89F91]",
-        iconDefault: "text-[#8C7A5E]",
-        cardBg: "from-[#1F1C19]/90 to-[#141210] border-[#D4AF37]/20",
-        cardGlow1: "bg-[#D4AF37]/10",
-        cardGlow2: "bg-[#C5A059]/5",
-        cardText: "text-[#E6D5B8]",
-        
-        personalCard: "bg-[#1F1C19]/60 border-[#D4AF37]/10",
-        personalIconBg: "bg-[#C5A059]/10",
-        personalIcon: "text-[#D9CDB8]",
-        corpCard: "bg-[#D4AF37]/10 border-[#D4AF37]/30",
-        corpIconBg: "bg-[#D4AF37]/20",
-        corpIcon: "text-[#D4AF37]",
-        
-        buttonBg: "bg-[#1F1C19]/80 hover:bg-[#2A2622] border-[#D4AF37]/20 text-[#D9CDB8]",
-        buttonHoverText: "group-hover:text-[#FDFBF7]",
-        accentLine: "bg-[#D4AF37]",
-        bottomGradient: "from-[#161412] via-[#161412]/95",
-    },
-    modern: {
-        // 프리미엄 핀테크 / 애플 스타일 (test-ui의 베이스)
-        bg: "bg-[#050505]",               
+        // 프리미엄 핀테크 블랙 & 샌드골드 (new 버전 색감)
+        bg: "bg-[#050505]",
         bgGradient: "from-[#050505] via-[#050505]/80",
         pill: "bg-white/10 text-[#E6D5B8] border border-white/5",
         quoteBorder: "border-[#E6D5B8]/30",
@@ -73,19 +46,19 @@ const THEMES = {
         textName: "text-[#FFFFFF]",
         textSubtitle: "text-[#8E8E93]",
         iconDefault: "text-[#E6D5B8]/80",
-        cardBg: "from-[#121214] to-[#121214] border-white/[0.06]",
+        cardBg: "from-[#121214] to-[#141417] border-white/[0.06]",
         cardGlow1: "bg-[#E6D5B8]/10",
         cardGlow2: "bg-[#FFFFFF]/5",
-        cardText: "text-[#FFFFFF]",
-        
+        cardText: "text-[#FDFBF7]",
+
         personalCard: "bg-[#121214] border-white/5",
         personalIconBg: "bg-[#E6D5B8]/10",
         personalIcon: "text-[#E6D5B8]",
         corpCard: "bg-white/[0.02] border-white/5",
         corpIconBg: "bg-white/5",
         corpIcon: "text-[#E6D5B8]",
-        
-        buttonBg: "bg-[#121214] hover:bg-[#1A1A1C] border-white/10 text-white/90",
+
+        buttonBg: "bg-[#121214] hover:bg-[#1A1A1C] border-white/10 text-[#E6D5B8]",
         buttonHoverText: "group-hover:text-white",
         accentLine: "bg-[#E6D5B8]",
         bottomGradient: "from-[#050505] via-[#050505]/95",
@@ -94,7 +67,7 @@ const THEMES = {
 
 export default async function ExpertMobilePage({ params }) {
     const { id } = await params;
-    
+
     // 가져온 id에 해당하는 전문가 데이터 찾기
     const expert = mobileExperts.find(e => e.id === id);
 
@@ -106,9 +79,9 @@ export default async function ExpertMobilePage({ params }) {
         );
     }
 
-    // test-ui (new) 에 사용된 초현대적 핀테크 색상(modern)을 주력 테마로 적용
-    const t = THEMES["modern"];
-    
+    // 데이터에 세팅된 theme를 무시하고 골드톤(gold) 테마 사용
+    const t = THEMES["gold"];
+
     // 링크 분류: 카카오톡 버튼만 하단 고정 배열, 나머지는 스크롤 리스트
     const kakaoLink = expert.links.find(l => l.type === "kakao");
     const otherLinks = expert.links.filter(l => l.type !== "kakao");
@@ -117,10 +90,10 @@ export default async function ExpertMobilePage({ params }) {
         <main className="fixed inset-0 z-[9999] bg-[#1a1f2bc0] flex items-center justify-center font-sans">
             {/* 모바일 폰 케이스 컨테이너 */}
             <div className={`relative w-full h-full sm:h-[90vh] sm:max-w-[520px] sm:aspect-[9/19] sm:rounded-[3rem] sm:border-[8px] sm:border-[#384252] ${t.bg} overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col`}>
-                
+
                 {/* 1. 실제 스크롤이 일어나는 영역 (하단에 버튼 여백 pb-28 확보) */}
                 <div className="relative z-10 w-full h-full overflow-y-auto scroll-smooth scrollbar-hide pb-28">
-                    
+
                     {/* 상단 액션 버튼 */}
                     <header className="absolute top-0 left-0 right-0 w-full px-5 py-5 flex justify-between items-center z-50">
                         <button className="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center shadow-lg hover:bg-black/60 transition-colors border border-white/10 active:scale-95">
@@ -132,12 +105,12 @@ export default async function ExpertMobilePage({ params }) {
                     </header>
 
                     {/* 히어로 영역 */}
-                    <section className="relative w-full h-[55vh] min-h-[450px] shrink-0">
+                    <section className="relative w-full h-[55vh] min-h-[450px] shrink-0 bg-[#121214]">
                         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 hidden" style={{ backgroundImage: `url(${expert.backgroundImage})` }} />
-                        <div className="absolute inset-0 bg-cover bg-top bg-no-repeat z-10" style={{ backgroundImage: `url(${expert.profileImage})` }} />
-                        
+                        <div className="absolute bg-[#E6D5B8] inset-0 bg-cover bg-top bg-no-repeat z-10" style={{ backgroundImage: `url(${expert.profileImage})` }} />
+
                         <div className={`absolute inset-0 z-20 bg-gradient-to-t ${t.bgGradient} to-transparent`} />
-                        
+
                         <div className="absolute bottom-10 left-6 right-6 z-30 flex flex-col items-start gap-1">
                             <span className={`${t.pill} px-2.5 py-1 rounded-md text-[11px] font-bold tracking-widest border backdrop-blur-sm`}>
                                 {expert.title}
@@ -149,7 +122,7 @@ export default async function ExpertMobilePage({ params }) {
                                 {expert.quote}
                             </p>
                         </div>
-                        
+
                         <div className="absolute bottom-2 left-0 right-0 z-30 flex justify-center opacity-60 animate-bounce">
                             <ChevronDown className="w-5 h-5 text-white/50" />
                         </div>
@@ -165,21 +138,20 @@ export default async function ExpertMobilePage({ params }) {
                             {expert.bullets.map((bullet, idx) => (
                                 <div key={idx} className="flex items-start gap-3 w-full group">
                                     {bullet.highlight ? (
-                                        <div className="mt-0.5 p-1.5 bg-gradient-to-br from-[#D4AF37] to-[#B38510] rounded-full shadow-[0_0_12px_rgba(212,175,55,0.4)] flex-shrink-0 relative overflow-hidden">
-                                            <div className="absolute inset-0 bg-white/20 w-full h-[200%] rotate-45 animate-pulse" />
-                                            <Award className="w-3.5 h-3.5 text-black relative z-10" strokeWidth={2.5} />
+                                        <div className="mt-0.5 p-1.5 bg-[#E6D5B8]/20 rounded-full flex-shrink-0 border border-[#E6D5B8]/30 shadow-[0_0_12px_rgba(230,213,184,0.1)]">
+                                            <Award className="w-3.5 h-3.5 text-[#E6D5B8] relative z-10" strokeWidth={2.5} />
                                         </div>
                                     ) : (
                                         <CheckCircle2 className={`w-4 h-4 mt-0.5 flex-shrink-0 ${t.iconDefault}`} />
                                     )}
-                                    <p className={`text-[14.5px] leading-relaxed break-keep tracking-wide ${bullet.highlight ? "text-[#FFD700] font-bold drop-shadow-sm" : `${t.textSubtitle} font-light`}`}>
+                                    <p className={`text-[14.5px] leading-relaxed break-keep tracking-wide ${bullet.highlight ? "text-[#E6D5B8] font-semibold" : `${t.textSubtitle} font-light`}`}>
                                         {bullet.text}
                                     </p>
                                 </div>
                             ))}
                         </div>
                     </section>
-                    
+
                     {/* 컨설팅 분야 */}
                     <section className={`relative z-40 ${t.bg} px-7 py-6 w-full flex flex-col gap-6`}>
                         <div className="flex items-center gap-2.5 mb-1 mt-2">
@@ -227,7 +199,7 @@ export default async function ExpertMobilePage({ params }) {
                         <div className={`w-full bg-gradient-to-br ${t.cardBg} border backdrop-blur-xl rounded-[2rem] p-8 shadow-2xl relative overflow-hidden group`}>
                             <div className={`absolute -right-10 -top-10 w-40 h-40 ${t.cardGlow1} blur-3xl rounded-full`} />
                             <div className={`absolute -left-10 -bottom-10 w-40 h-40 ${t.cardGlow2} blur-3xl rounded-full`} />
-                            
+
                             <p className={`${t.cardText} text-[15px] leading-relaxed font-serif font-medium whitespace-pre-line break-keep relative z-10 text-center`}>
                                 {expert.cardText}
                             </p>
@@ -237,7 +209,7 @@ export default async function ExpertMobilePage({ params }) {
                                 </span>
                             </div>
                         </div>
-                        
+
                         <div className="flex flex-col gap-3.5 w-full mt-4">
                             {otherLinks.map((link, idx) => {
                                 if (link.type === "thumbnail") {
@@ -265,7 +237,7 @@ export default async function ExpertMobilePage({ params }) {
                                 );
                             })}
                         </div>
-                        
+
                         <div className="w-full text-center mt-12 mb-6 opacity-60">
                             <p className="text-[10px] text-white/50 font-mono tracking-widest uppercase">
                                 © Trustway Jeju. All rights reserved.
@@ -273,11 +245,11 @@ export default async function ExpertMobilePage({ params }) {
                         </div>
                     </section>
                 </div>
-                
+
                 {/* 2. 하단 고정 카카오톡 연락하기 버튼 */}
                 {kakaoLink && (
                     <div className={`absolute bottom-0 left-0 right-0 z-50 px-5 pb-8 pt-10 bg-gradient-to-t ${t.bottomGradient} to-transparent md:rounded-b-[3rem] pointer-events-none`}>
-                        <a href={kakaoLink.url} className="w-full pointer-events-auto bg-[#FEE500] hover:bg-[#F4DC00] rounded-[1.5rem] py-4 px-6 flex items-center justify-center gap-2.5 shadow-[0_0_20px_rgba(254,229,0,0.15)] transition-transform active:scale-[0.98]">
+                        <a href={kakaoLink.url} className="w-full pointer-events-auto bg-[#E6D5B8] hover:bg-[#F4DC00] rounded-[1.5rem] py-4 px-6 flex items-center justify-center gap-2.5 shadow-[0_0_20px_rgba(254,229,0,0.15)] transition-transform active:scale-[0.98]">
                             <MessageCircle className="w-5 h-5 text-black fill-black" strokeWidth={2} />
                             <span className="text-black text-[15px] font-bold tracking-tight">{kakaoLink.title}</span>
                         </a>
