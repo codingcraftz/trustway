@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { mobileExperts } from "@/lib/mobileExperts";
 import { MobileShareHeader } from "@/components/shared/MobileShareHeader";
+import { getExpertMetadata } from "@/lib/metadata";
 
 export async function generateStaticParams() {
     return mobileExperts.map((expert) => ({
@@ -13,40 +14,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
     const { id } = await params;
     const expert = mobileExperts.find((e) => e.id === id);
-
-    if (!expert) {
-        return { title: '전문가 프로필을 찾을 수 없습니다' };
-    }
-
-    const title = `${expert.title} ${expert.name}님의 모바일 명함`;
-    const description = `"${expert.quote}" - 프리미엄 자산관리 및 금융 컨설팅 전문가, ${expert.name} ${expert.title}의 모바일 명함입니다.`;
-
-    return {
-        title,
-        description,
-        openGraph: {
-            title,
-            description,
-            type: 'website',
-            siteName: 'Trustway',
-            locale: 'ko_KR',
-            // 카카오톡 등에서 썸네일 노출이 잘 되도록 절대경로 형태 적용 (필요 시 도메인 주소로 Next.js가 자동 변환해줌)
-            images: [
-                {
-                    url: `https://www.trustway.kr${expert.profileImage}`,
-                    width: 800,
-                    height: 800,
-                    alt: `${expert.name} 프로필 사진`,
-                }
-            ],
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title,
-            description,
-            images: [`https://www.trustway.kr${expert.profileImage}`],
-        }
-    };
+    return getExpertMetadata(expert);
 }
 
 // 두 가지 테마 정의 (Navy / Gold)
