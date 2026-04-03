@@ -1,4 +1,4 @@
-import { Upload, Bell, ChevronRight, MessageCircle, Award, CheckCircle2, ChevronDown, User, Building2, Check, X } from "lucide-react";
+import { Upload, Bell, ChevronRight, MessageCircle, Award, CheckCircle2, ChevronDown, User, Building2, Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { mobileExperts } from "@/lib/mobileExperts";
@@ -103,10 +103,7 @@ export default async function ExpertMobilePage({ params }) {
                 {/* 1. 실제 스크롤이 일어나는 영역 (하단에 버튼 여백 pb-28 확보) */}
                 <div className="relative z-10 w-full h-full overflow-y-auto scroll-smooth scrollbar-hide pb-28">
 
-                    {/* 상단 액션 닫기(홈) 버튼 및 우측 공유 버튼 */}
-                    <Link href={`/experts/${id}`} className="absolute top-6 left-5 z-50 w-10 h-10 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center cursor-pointer active:scale-95 transition-transform border border-white/10 shadow-lg pointer-events-auto">
-                        <X className="w-5 h-5 text-white/90" strokeWidth={2} />
-                    </Link>
+                    {/* 우측 공유 버튼 */}
                     <MobileShareHeader 
                         expertName={expert.name} 
                         expertTitle={expert.title} 

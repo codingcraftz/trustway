@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { X, ChevronRight, Award, CheckCircle2, Building2, User, MessageCircle, Phone, Mail, FileText } from "lucide-react";
+import { ChevronRight, Award, CheckCircle2, Building2, User, MessageCircle, Phone, Mail, FileText } from "lucide-react";
 import Link from "next/link";
 import { mobileExperts } from "@/lib/mobileExperts";
 import { MobileShareHeader } from "@/components/shared/MobileShareHeader";
@@ -53,10 +53,6 @@ export default async function MobileCardTestPage({ params }) {
             {/* 모바일 뷰 컨테이너 */}
             <div className={`relative w-full h-full sm:h-[850px] sm:max-w-[420px] ${t.bg} sm:rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl ring-1 ring-white/10`}>
 
-                {/* 상단 닫기 버튼 (유리 질감) */}
-                <Link href={`/experts/${id}`} className="absolute top-6 left-5 z-50 w-10 h-10 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center cursor-pointer active:scale-95 transition-transform border border-white/10 shadow-lg">
-                    <X className="w-5 h-5 text-white/90" />
-                </Link>
 
                 {/* 우측 상단 공유하기 버튼 */}
                 <MobileShareHeader 
