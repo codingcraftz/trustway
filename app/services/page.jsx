@@ -7,7 +7,34 @@ import {
   Users,
   Building2,
   ArrowRight,
+  Scale,
+  LineChart,
+  Search,
+  MapPin,
 } from "lucide-react";
+
+const differentiators = [
+  {
+    icon: Scale,
+    title: "전 보험사 취급 GA",
+    desc: "특정 회사 상품을 밀지 않습니다. 모든 보험사를 중립적으로 비교해 고객에게 가장 유리한 구조를 설계합니다.",
+  },
+  {
+    icon: LineChart,
+    title: "증권·은행 출신 팀",
+    desc: "보험만 보지 않습니다. 증권·은행 실무를 거친 전문가들이 보장과 자산 증식을 한 판에서 함께 봅니다.",
+  },
+  {
+    icon: Search,
+    title: "가입 권유가 아닌 '점검'",
+    desc: "\"이건 굳이 안 드셔도 됩니다.\" 소모성 보험을 줄이고, 새는 보험료를 자산이 되는 구조로 옮깁니다.",
+  },
+  {
+    icon: MapPin,
+    title: "제주 밀착 설계",
+    desc: "자영업·관광·이주 등 제주 특유의 소득 흐름을 이해하고, 제주도민에게 맞춘 재무·노후 설계를 제공합니다.",
+  },
+];
 
 export const metadata = {
   title: "제주 재무설계·보험·자산관리 서비스",
@@ -83,6 +110,42 @@ export default function ServicesPage() {
           >
             무료 상담 신청 <ArrowRight className="w-4 h-4" />
           </Link>
+        </div>
+      </section>
+
+      {/* 트러스트웨이만의 특별한 차별점 */}
+      <section className="bg-slate-50 py-24">
+        <div className="container mx-auto max-w-7xl px-6 md:px-12">
+          <div className="mb-14 text-center">
+            <span className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">
+              Why Trustway
+            </span>
+            <h2 className="mt-4 text-2xl md:text-4xl font-bold break-keep">
+              트러스트웨이만의 특별한 차별점
+            </h2>
+            <p className="mt-4 text-slate-600 break-keep">
+              제주에서, 왜 트러스트웨이일까요.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {differentiators.map(({ icon: Icon, title, desc }, i) => (
+              <div
+                key={title}
+                className="relative bg-white border border-slate-200 rounded-2xl p-8 hover:border-primary/40 hover:shadow-lg transition-all"
+              >
+                <span className="text-5xl font-black text-slate-100 absolute top-5 right-6 select-none">
+                  {`0${i + 1}`}
+                </span>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Icon className="w-6 h-6 text-primary" strokeWidth={1.8} />
+                </div>
+                <h3 className="mt-5 text-lg font-bold break-keep">{title}</h3>
+                <p className="mt-3 text-sm text-slate-600 leading-relaxed break-keep">
+                  {desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
