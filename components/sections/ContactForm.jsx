@@ -84,7 +84,7 @@ export function ContactForm() {
                 <div className="w-full max-w-3xl animate-fade-in-up">
 
                     <div className="text-center mb-16 space-y-6">
-                        <p className="text-slate-400 font-mono text-xs tracking-[0.2em] uppercase">1:1 상담 예약</p>
+                        <p className="text-slate-500 font-mono text-xs tracking-[0.2em] uppercase">1:1 상담 예약</p>
                         <h2 className="text-3xl md:text-4xl font-sans font-light text-slate-900 tracking-tight break-keep">
                             당신만을 위한 <strong className="font-medium text-primary">전문적이고 깊이 있는 1:1 상담 예약</strong>
                         </h2>
@@ -176,7 +176,7 @@ export function ContactForm() {
                                         >
                                             개인정보 수집 및 이용 동의 (필수)
                                         </Label>
-                                        <p className="text-[11px] text-slate-400 font-light max-w-md">
+                                        <p className="text-[11px] text-slate-600 font-light max-w-md">
                                             수집된 정보는 상담 목적으로만 사용되며, 최상위 보안 등급 하에 관리된 후 파기됩니다.
                                         </p>
                                         {errors.privacyConsent && <p className="text-red-500 text-[11px] font-mono uppercase tracking-wide">{errors.privacyConsent.message}</p>}

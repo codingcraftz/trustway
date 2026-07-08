@@ -9,7 +9,7 @@ export function PhilosophySection() {
                     </div>
 
                     <div className="space-y-6">
-                        <p className="text-slate-400 font-mono text-xs tracking-[0.3em] uppercase">
+                        <p className="text-slate-500 font-mono text-xs tracking-[0.3em] uppercase">
                             신뢰의 길
                         </p>
                         <h2 className="text-3xl md:text-5xl font-sans font-light text-slate-900 tracking-tight leading-snug break-keep">

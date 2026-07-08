@@ -111,14 +111,14 @@ export default async function ExpertDetailPage({ params }) {
                         {/* Quick Stats Grid */}
                         <div className="grid grid-cols-2 gap-4 mb-16">
                             <div className="bg-white p-6 rounded-[1.5rem] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-center transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1">
-                                <div className="flex items-center gap-2 text-slate-400 mb-3">
+                                <div className="flex items-center gap-2 text-slate-500 mb-3">
                                     <Star className="w-4 h-4 text-primary" />
                                     <span className="text-xs font-bold uppercase tracking-widest">Experience</span>
                                 </div>
                                 <p className="text-2xl font-black text-slate-800">{expert.years}</p>
                             </div>
                             <div className="bg-white p-6 rounded-[1.5rem] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-center transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1">
-                                <div className="flex items-center gap-2 text-slate-400 mb-3">
+                                <div className="flex items-center gap-2 text-slate-500 mb-3">
                                     <Mail className="w-4 h-4 text-primary" />
                                     <span className="text-xs font-bold uppercase tracking-widest">Contact</span>
                                 </div>

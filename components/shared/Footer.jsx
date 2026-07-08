@@ -21,7 +21,7 @@ export function Footer() {
                         alt="TrustWay Logo"
                         className="h-10 w-auto opacity-70 brightness-0 invert"
                     />
-                    <p className="text-sm font-light text-slate-500">
+                    <p className="text-sm font-light text-slate-400">
                         트러스트웨이 본부<br />
                         © {new Date().getFullYear()} TrustWay. All rights reserved.
                     </p>
@@ -38,7 +38,7 @@ export function Footer() {
                     <div className="flex gap-4 mt-4 pt-4 border-t border-slate-800">
                         <Link href="/about" className="text-xs hover:text-white transition-colors">About</Link>
                         <Link href="/location" className="text-xs hover:text-white transition-colors">Location</Link>
-                        <Link href="/office" className="text-xs hover:text-primary transition-colors">Staff Only</Link>
+                        <Link href="/office" className="text-xs hover:text-white transition-colors">Staff Only</Link>
                     </div>
                 </div>
             </div>

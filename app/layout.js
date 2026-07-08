@@ -65,7 +65,7 @@ const jsonLd = {
   areaServed: { "@type": "AdministrativeArea", name: "제주특별자치도" },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "월랑로 81",
+    streetAddress: "노형동 2733-1",
     addressLocality: "제주시",
     addressRegion: "제주특별자치도",
     addressCountry: "KR",

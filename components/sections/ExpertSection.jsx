@@ -62,9 +62,9 @@ export function ExpertSection() {
                                     </p>
                                     <h3 className="text-3xl font-sans font-medium text-white tracking-tight flex items-center justify-between">
                                         {expert.name}
-                                        <ArrowUpRight className="w-6 h-6 text-slate-500 group-hover:text-white transition-colors" />
+                                        <ArrowUpRight className="w-6 h-6 text-slate-400 group-hover:text-white transition-colors" />
                                     </h3>
-                                    <p className="text-slate-500 text-sm mt-3 font-light leading-relaxed h-[42px] overflow-hidden group-hover:text-slate-300 transition-colors">
+                                    <p className="text-slate-400 text-sm mt-3 font-light leading-relaxed h-[42px] overflow-hidden group-hover:text-slate-300 transition-colors">
                                         {expert.description.substring(0, 50)}...
                                     </p>
                                 </div>

@@ -87,11 +87,11 @@ export default function CasesPage() {
               <h2 className="mt-5 text-xl font-bold break-keep">{title}</h2>
               <dl className="mt-5 space-y-3 text-sm leading-relaxed">
                 <div>
-                  <dt className="font-semibold text-slate-400">상황</dt>
+                  <dt className="font-semibold text-slate-500">상황</dt>
                   <dd className="text-slate-600 break-keep">{before}</dd>
                 </div>
                 <div>
-                  <dt className="font-semibold text-slate-400">설계</dt>
+                  <dt className="font-semibold text-slate-500">설계</dt>
                   <dd className="text-slate-600 break-keep">{action}</dd>
                 </div>
                 <div>
@@ -104,7 +104,7 @@ export default function CasesPage() {
         </div>
 
         {/* 컴플라이언스 고지 */}
-        <p className="mt-10 text-xs text-slate-400 leading-relaxed break-keep">
+        <p className="mt-10 text-xs text-slate-600 leading-relaxed break-keep">
           ※ 위 사례는 실제 상담 내용을 각색·익명 처리한 예시입니다. 개인의 소득·자산·목표에
           따라 설계와 결과는 달라질 수 있으며, 특정 수익이나 원금을 보장하지 않습니다.
           투자에는 원금 손실 위험이 있습니다.

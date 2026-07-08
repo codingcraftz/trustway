@@ -40,7 +40,7 @@ export function ValueSection() {
                             <div className="w-16 h-16 rounded-none bg-slate-100 flex items-center justify-center mb-8 border border-slate-200 text-slate-700 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                                 <ShieldAlert strokeWidth={1} className="w-8 h-8" />
                             </div>
-                            <h3 className="text-xs font-mono tracking-widest text-slate-400 uppercase mb-2">1단계 · 방어</h3>
+                            <h3 className="text-xs font-mono tracking-widest text-slate-500 uppercase mb-2">1단계 · 방어</h3>
                             <h4 className="text-xl font-bold text-slate-800 mb-4">리스크 관리</h4>
                             <p className="text-sm text-slate-500 font-light leading-relaxed h-full break-keep border-t border-slate-100 pt-4 mt-auto">
                                 질병, 재난, 상속 분쟁 등 통제 불가능한 변수로부터 자산의 훼손을 완벽히 차단하는 데이터 기반 다중 방어막.
@@ -67,7 +67,7 @@ export function ValueSection() {
                             <div className="w-16 h-16 rounded-none bg-slate-100 flex items-center justify-center mb-8 border border-slate-200 text-slate-700 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                                 <TrendingUp strokeWidth={1} className="w-8 h-8" />
                             </div>
-                            <h3 className="text-xs font-mono tracking-widest text-slate-400 uppercase mb-2">2단계 · 성장</h3>
+                            <h3 className="text-xs font-mono tracking-widest text-slate-500 uppercase mb-2">2단계 · 성장</h3>
                             <h4 className="text-xl font-bold text-slate-800 mb-4">자산·절세 플랜</h4>
                             <p className="text-sm text-slate-500 font-light leading-relaxed h-full break-keep border-t border-slate-100 pt-4 mt-auto">
                                 수익성 높은 저축, 투자 전략부터 IRP/ISA 계좌를 통한 절세와 연금 확보까지. 미래를 향한 자산의 든든한 성장 로드맵.

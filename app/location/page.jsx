@@ -17,7 +17,7 @@ const staggerContainer = {
 };
 
 export default function LocationPage() {
-  const officeAddress = "제주특별자치도 제주시 월랑로 81";
+  const officeAddress = "제주특별자치도 제주시 노형동 2733-1";
 
   const handleKakaoMap = () => {
     window.open(
@@ -81,10 +81,10 @@ export default function LocationPage() {
                     </div>
                     <div>
                       <p className="text-slate-800 text-lg font-semibold leading-relaxed break-keep">
-                        제주특별자치도 제주시 월랑로 81
+                        제주특별자치도 제주시 노형동 2733-1
                       </p>
                       <p className="text-[13px] font-medium text-primary mt-2 bg-primary/10 inline-block px-2.5 py-1 rounded-md">
-                        📍 제주 중앙병원 인근
+                        📍 단독건물 1·2층
                       </p>
                     </div>
                   </div>

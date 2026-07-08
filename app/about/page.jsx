@@ -247,7 +247,7 @@ export default function AboutPage() {
                       {expert.description}
                     </p>
                     <div className="space-y-2">
-                      <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Key Areas</h4>
+                      <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">주요 분야</h4>
                       <div className="flex flex-wrap gap-2">
                         {expert.tags.slice(0, 3).map((tag, i) => (
                           <span key={i} className="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded-md">
@@ -335,22 +335,22 @@ export default function AboutPage() {
             {[...Array(2)].map((_, i) => (
               <div key={i} className="flex gap-16 md:gap-24 items-center">
                 {/* 텍스트 기반 모의 파트너사 로고. 마우스 호버 시 컬러 변경 */}
-                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-40 hover:opacity-100 hover:text-[#ff6b00] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
+                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-70 hover:opacity-100 hover:text-[#ff6b00] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
                   MIRAE ASSET
                 </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-40 hover:opacity-100 hover:text-[#0052a4] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
+                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-70 hover:opacity-100 hover:text-[#0052a4] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
                   SAMSUNG LIFE
                 </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-40 hover:opacity-100 hover:text-[#ffca08] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
+                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-70 hover:opacity-100 hover:text-[#ffca08] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
                   KB INSURANCE
                 </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-40 hover:opacity-100 hover:text-[#002f6c] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
+                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-70 hover:opacity-100 hover:text-[#002f6c] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
                   HYUNDAI MARINE
                 </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-40 hover:opacity-100 hover:text-[#ed1c24] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
+                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-70 hover:opacity-100 hover:text-[#ed1c24] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
                   HANWHA LIFE
                 </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-40 hover:opacity-100 hover:text-[#eb6100] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
+                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-70 hover:opacity-100 hover:text-[#eb6100] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
                   DB INSURANCE
                 </div>
               </div>
