@@ -8,6 +8,7 @@ export default function sitemap() {
     { path: "", priority: 1.0 },
     { path: "/about", priority: 0.9 },
     { path: "/services", priority: 0.9 },
+    { path: "/cases", priority: 0.8 },
     { path: "/experts", priority: 0.8 },
     { path: "/location", priority: 0.7 },
   ].map(({ path, priority }) => ({

@@ -89,6 +89,7 @@ const jsonLd = {
 
 import { Header } from "@/components/shared/Header";
 import { Footer } from "@/components/shared/Footer";
+import { FloatingContact } from "@/components/shared/FloatingContact";
 
 export default function RootLayout({ children }) {
   return (
@@ -103,6 +104,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <FloatingContact />
       </body>
     </html>
   );

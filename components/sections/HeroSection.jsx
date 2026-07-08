@@ -57,23 +57,6 @@ export function HeroSection() {
                 </div>
             </div>
 
-            {/* Technical ticker/indices overlay at the bottom */}
-            <div className="absolute bottom-0 left-0 w-full border-t border-slate-800 bg-black/40 backdrop-blur-md z-30 py-4 flex overflow-hidden">
-                <div className="animate-fade-in flex space-x-12 px-12 opacity-40">
-                    <div className="flex items-center gap-3 text-xs font-mono text-slate-400 uppercase tracking-widest">
-                        <span>Risk Metrics</span>
-                        <span className="text-blue-400">Sys Active</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-xs font-mono text-slate-400 uppercase tracking-widest">
-                        <span>Tax & Pension Plan</span>
-                        <span className="text-blue-400">Ver 2.4</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-xs font-mono text-slate-400 uppercase tracking-widest hidden md:flex">
-                        <span>Savings & Investment</span>
-                        <span className="text-blue-400">Optimizing</span>
-                    </div>
-                </div>
-            </div>
         </section>
     );
 }

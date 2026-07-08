@@ -35,45 +35,14 @@ export function Header() {
                 </Link>
 
                 {/* 데스크톱 GNB 메뉴 */}
-                <nav className="hidden md:flex items-center gap-8">
-                    <Link
-                        href="/about"
-                        className="text-[14px] font-semibold tracking-widest transition-colors hover:text-primary text-slate-600 uppercase"
-                    >
-                        About
-                    </Link>
-                    <Link
-                        href="/services"
-                        className="text-[14px] font-semibold tracking-widest transition-colors hover:text-primary text-slate-600 uppercase"
-                    >
-                        Services
-                    </Link>
-                    <Link
-                        href="/experts"
-                        className="text-[14px] font-semibold tracking-widest transition-colors hover:text-primary text-slate-600 uppercase"
-                    >
-                        Expertise
-                    </Link>
-                    <Link
-                        href="/location"
-                        className="text-[14px] font-semibold tracking-widest transition-colors hover:text-primary text-slate-600 uppercase"
-                    >
-                        Location
-                    </Link>
-                    <a
-                        href="https://blog.naver.com/trustway_jun"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[14px] font-semibold tracking-widest transition-colors hover:text-primary text-slate-600 uppercase"
-                    >
-                        Blog
-                    </a>
-                    <Link
-                        href="/#contact"
-                        className="ml-4 px-7 py-3 bg-primary text-white text-[13px] font-semibold tracking-[0.15em] uppercase hover:bg-primary/90 transition-colors shadow-sm"
-                    >
-                        Contact
-                    </Link>
+                <nav className="hidden md:flex items-center gap-6 lg:gap-7">
+                    <Link href="/about" className="text-[15px] font-semibold transition-colors hover:text-primary text-slate-600">소개</Link>
+                    <Link href="/services" className="text-[15px] font-semibold transition-colors hover:text-primary text-slate-600">서비스</Link>
+                    <Link href="/experts" className="text-[15px] font-semibold transition-colors hover:text-primary text-slate-600">전문가</Link>
+                    <Link href="/cases" className="text-[15px] font-semibold transition-colors hover:text-primary text-slate-600">상담사례</Link>
+                    <Link href="/location" className="text-[15px] font-semibold transition-colors hover:text-primary text-slate-600">오시는 길</Link>
+                    <a href="https://blog.naver.com/trustway_jun" target="_blank" rel="noopener noreferrer" className="text-[15px] font-semibold transition-colors hover:text-primary text-slate-600">블로그</a>
+                    <Link href="/#contact" className="ml-2 px-6 py-3 bg-primary text-white text-[14px] font-semibold hover:bg-primary/90 transition-colors shadow-sm">상담문의</Link>
                 </nav>
 
                 {/* 모바일 햄버거 메뉴 및 이벤트 연결 */}
@@ -92,12 +61,13 @@ export function Header() {
 
             {/* 모바일 햄버거 GNB 화면 오버레이 */}
             <div className={`md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-xl px-6 py-6 flex flex-col gap-6 transition-all duration-300 origin-top overflow-hidden transform ${isMenuOpen ? 'opacity-100 scale-y-100 max-h-screen' : 'opacity-0 scale-y-0 max-h-0'}`}>
-                <Link href="/about" className="text-[15px] font-semibold tracking-widest text-slate-800 uppercase border-b border-slate-100 pb-3">About</Link>
-                <Link href="/services" className="text-[15px] font-semibold tracking-widest text-slate-800 uppercase border-b border-slate-100 pb-3">Services</Link>
-                <Link href="/experts" className="text-[15px] font-semibold tracking-widest text-slate-800 uppercase border-b border-slate-100 pb-3">Expertise</Link>
-                <Link href="/location" className="text-[15px] font-semibold tracking-widest text-slate-800 uppercase border-b border-slate-100 pb-3">Location</Link>
-                <a href="https://blog.naver.com/trustway_jun" target="_blank" rel="noopener noreferrer" className="text-[15px] font-semibold tracking-widest text-slate-800 uppercase border-b border-slate-100 pb-3">Blog</a>
-                <Link href="/#contact" className="mt-4 text-center px-7 py-4 bg-primary text-white text-[14px] font-semibold tracking-[0.1em] rounded-sm uppercase hover:bg-primary/90 transition-colors shadow-sm">Contact</Link>
+                <Link href="/about" className="text-[15px] font-semibold text-slate-800 border-b border-slate-100 pb-3">소개</Link>
+                <Link href="/services" className="text-[15px] font-semibold text-slate-800 border-b border-slate-100 pb-3">서비스</Link>
+                <Link href="/experts" className="text-[15px] font-semibold text-slate-800 border-b border-slate-100 pb-3">전문가</Link>
+                <Link href="/cases" className="text-[15px] font-semibold text-slate-800 border-b border-slate-100 pb-3">상담사례</Link>
+                <Link href="/location" className="text-[15px] font-semibold text-slate-800 border-b border-slate-100 pb-3">오시는 길</Link>
+                <a href="https://blog.naver.com/trustway_jun" target="_blank" rel="noopener noreferrer" className="text-[15px] font-semibold text-slate-800 border-b border-slate-100 pb-3">블로그</a>
+                <Link href="/#contact" className="mt-4 text-center px-7 py-4 bg-primary text-white text-[14px] font-semibold rounded-sm hover:bg-primary/90 transition-colors shadow-sm">상담문의</Link>
             </div>
         </header>
     );
