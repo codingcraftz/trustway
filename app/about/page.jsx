@@ -52,11 +52,11 @@ export default function AboutPage() {
             className="max-w-3xl mx-auto space-y-6"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight break-keep">
-              금융의 모든 길,<br />
-              <span className="text-blue-300">트러스트웨이 제주</span>가 제안합니다
+              보험을 자산으로 바꾸는<br />
+              <span className="text-blue-300">제주 자산설계 전문</span>, 트러스트웨이
             </h1>
-            <p className="text-lg md:text-xl text-slate-200 font-light break-keep">
-              고객의 안정적인 현재와 더 나은 미래를 위해, 개인 자산관리부터 법인 경영컨설팅까지 흔들림 없는 종합 금융 파트너가 되겠습니다.
+            <p className="text-lg md:text-xl text-slate-100 break-keep">
+              증권·은행 등 금융권 출신 전문가 팀이 보험 점검부터 연금·자산관리, 법인 컨설팅까지 제주도민의 자산을 통합 설계합니다.
             </p>
           </motion.div>
         </div>
