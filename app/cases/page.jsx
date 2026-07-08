@@ -169,6 +169,39 @@ export default function CasesPage() {
         </p>
       </section>
 
+      {/* 고객 후기 (카카오톡 캡처) */}
+      <section className="bg-slate-50 py-24 border-t border-slate-200">
+        <div className="container mx-auto max-w-7xl px-6 md:px-12">
+          <div className="text-center mb-14">
+            <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">
+              Real Talk
+            </span>
+            <h2 className="mt-4 text-2xl md:text-4xl font-bold break-keep">
+              상담받은 제주도민들의 이야기
+            </h2>
+            <p className="mt-4 text-slate-600 break-keep">
+              점검부터 시작해, 이렇게 달라졌습니다.
+            </p>
+          </div>
+
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-5">
+            {[1, 2, 3, 4, 5, 6].map((n) => (
+              <img
+                key={n}
+                src={`/img/reviews/review${n}.png`}
+                alt={`제주 고객 상담 후기 ${n}`}
+                loading="lazy"
+                className="mb-5 w-full rounded-2xl border border-slate-200 shadow-sm break-inside-avoid"
+              />
+            ))}
+          </div>
+
+          <p className="mt-8 text-xs text-slate-500 text-center break-keep">
+            ※ 실제 상담 내용을 바탕으로 각색·익명 처리한 예시 이미지입니다.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#020717] text-white py-24">
         <div className="container mx-auto max-w-7xl px-6 md:px-12 text-center">
