@@ -16,6 +16,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { experts } from "@/lib/data";
 
+// 파트너 보험사 로고 파일명 (public/img/logos/{name}.png)
+const PARTNER_LOGOS = [
+  "삼성생명", "삼성화재", "미래에셋생명", "한화손해보험", "현대해상",
+  "KB라이프", "KB손해보험", "DB손해보험", "메리츠화재", "신한라이프",
+  "하나생명", "메트라이프", "KDB생명", "IBK연금보험", "IM라이프",
+  "푸본현대생명", "처브라이프",
+];
+
 // Animations
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -331,28 +339,17 @@ export default function AboutPage() {
               repeat: Infinity,
             }}
           >
-            {/* 파트너 로고들 (실제 로고 이미지가 없다면 텍스트 타이포그래피로 대체) */}
+            {/* 파트너 보험사 로고 (실제 로고 이미지, 무한 롤링) */}
             {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex gap-16 md:gap-24 items-center">
-                {/* 텍스트 기반 모의 파트너사 로고. 마우스 호버 시 컬러 변경 */}
-                <div className="text-xl md:text-3xl font-black tracking-tighter text-slate-600 hover:text-[#ff6b00] transition-colors cursor-default">
-                  MIRAE ASSET
-                </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter text-slate-600 hover:text-[#0052a4] transition-colors cursor-default">
-                  SAMSUNG LIFE
-                </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter text-slate-600 hover:text-[#ffca08] transition-colors cursor-default">
-                  KB INSURANCE
-                </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter text-slate-600 hover:text-[#002f6c] transition-colors cursor-default">
-                  HYUNDAI MARINE
-                </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter text-slate-600 hover:text-[#ed1c24] transition-colors cursor-default">
-                  HANWHA LIFE
-                </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter text-slate-600 hover:text-[#eb6100] transition-colors cursor-default">
-                  DB INSURANCE
-                </div>
+              <div key={i} className="flex gap-14 md:gap-20 items-center">
+                {PARTNER_LOGOS.map((name) => (
+                  <img
+                    key={name}
+                    src={`/img/logos/${name}.png`}
+                    alt={name}
+                    className="h-8 md:h-10 w-auto object-contain shrink-0 opacity-90 hover:opacity-100 transition-opacity"
+                  />
+                ))}
               </div>
             ))}
           </motion.div>
