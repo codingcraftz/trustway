@@ -89,7 +89,7 @@ export function ContactForm() {
                             당신만을 위한 <strong className="font-medium text-primary">전문적이고 깊이 있는 1:1 상담 예약</strong>
                         </h2>
                         <div className="w-12 h-[1px] bg-slate-300 mx-auto"></div>
-                        <p className="text-[14px] text-slate-500 font-light break-keep max-w-md mx-auto leading-relaxed">
+                        <p className="text-[15px] text-slate-600 break-keep max-w-md mx-auto leading-relaxed">
                             사전 예약을 통해서만 프라이빗 컨설팅이 진행됩니다.<br />정보를 남겨주시면 담당 파트너가 정확하게 진단하고 연락드리겠습니다.
                         </p>
                     </div>

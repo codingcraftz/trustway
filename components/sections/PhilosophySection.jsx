@@ -19,7 +19,7 @@ export function PhilosophySection() {
                         </h2>
                     </div>
 
-                    <div className="space-y-8 text-center text-slate-600 font-light leading-relaxed text-[16px] md:text-[17px] break-keep mx-auto tracking-wide">
+                    <div className="space-y-8 text-center text-slate-700 leading-relaxed text-[16px] md:text-[17px] break-keep mx-auto tracking-wide">
                         <p>
                             시장은 흔들리고 변수는 통제할 수 없습니다.<br className="hidden sm:block" />
                             그러나 당신의 자산을 향한 철학과 방향성은 결코 흔들려서는 안 됩니다.

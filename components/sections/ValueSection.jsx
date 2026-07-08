@@ -21,7 +21,7 @@ export function ValueSection() {
                     </div>
 
                     <div className="lg:w-1/2 flex items-end">
-                        <p className="text-[15px] text-slate-500 leading-relaxed font-light border-l border-slate-300 pl-6 max-w-lg break-keep">
+                        <p className="text-[15px] text-slate-700 leading-relaxed border-l border-slate-300 pl-6 max-w-lg break-keep">
                             투자, 저축, 절세, 보험, 연금이 완벽하게 맞물린 자산 관리를 경험하세요. <br className="hidden md:block" />
                             트러스트웨이는 각 분야 최정예 전문가들의 유기적인 데이터 결합을 통해, 빈틈없이 돌아가는 <strong className="text-slate-800 font-medium">통합 재무 포트폴리오</strong>를 설계합니다.
                         </p>
@@ -42,7 +42,7 @@ export function ValueSection() {
                             </div>
                             <h3 className="text-xs font-mono tracking-widest text-slate-500 uppercase mb-2">1단계 · 방어</h3>
                             <h4 className="text-xl font-bold text-slate-800 mb-4">리스크 관리</h4>
-                            <p className="text-sm text-slate-500 font-light leading-relaxed h-full break-keep border-t border-slate-100 pt-4 mt-auto">
+                            <p className="text-sm text-slate-600 leading-relaxed h-full break-keep border-t border-slate-100 pt-4 mt-auto">
                                 질병, 재난, 상속 분쟁 등 통제 불가능한 변수로부터 자산의 훼손을 완벽히 차단하는 데이터 기반 다중 방어막.
                             </p>
                         </div>
@@ -69,7 +69,7 @@ export function ValueSection() {
                             </div>
                             <h3 className="text-xs font-mono tracking-widest text-slate-500 uppercase mb-2">2단계 · 성장</h3>
                             <h4 className="text-xl font-bold text-slate-800 mb-4">자산·절세 플랜</h4>
-                            <p className="text-sm text-slate-500 font-light leading-relaxed h-full break-keep border-t border-slate-100 pt-4 mt-auto">
+                            <p className="text-sm text-slate-600 leading-relaxed h-full break-keep border-t border-slate-100 pt-4 mt-auto">
                                 수익성 높은 저축, 투자 전략부터 IRP/ISA 계좌를 통한 절세와 연금 확보까지. 미래를 향한 자산의 든든한 성장 로드맵.
                             </p>
                         </div>
