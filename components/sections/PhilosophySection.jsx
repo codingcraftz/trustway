@@ -10,7 +10,7 @@ export function PhilosophySection() {
 
                     <div className="space-y-6">
                         <p className="text-slate-400 font-mono text-xs tracking-[0.3em] uppercase">
-                            The Trusted Path
+                            신뢰의 길
                         </p>
                         <h2 className="text-3xl md:text-5xl font-sans font-light text-slate-900 tracking-tight leading-snug break-keep">
                             금융의 새로운 기준,
@@ -37,8 +37,8 @@ export function PhilosophySection() {
 
                     <div className="pt-8">
                         {/* Sincere Signature Touch */}
-                        <p className="font-serif italic text-2xl text-slate-800">
-                            Trustway Finance Partners
+                        <p className="font-serif text-2xl text-slate-800">
+                            트러스트웨이 제주본부
                         </p>
                         <div className="w-16 h-[1px] bg-slate-300 mx-auto mt-6"></div>
                     </div>

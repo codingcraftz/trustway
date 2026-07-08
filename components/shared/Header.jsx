@@ -42,13 +42,12 @@ export function Header() {
                     >
                         About
                     </Link>
-                    {/*<Link
-                        href="/solution"
+                    <Link
+                        href="/services"
                         className="text-[14px] font-semibold tracking-widest transition-colors hover:text-primary text-slate-600 uppercase"
                     >
-                        Solution
+                        Services
                     </Link>
-                    */}
                     <Link
                         href="/experts"
                         className="text-[14px] font-semibold tracking-widest transition-colors hover:text-primary text-slate-600 uppercase"
@@ -61,12 +60,14 @@ export function Header() {
                     >
                         Location
                     </Link>
-                    {/*<Link
-                        href="/insights"
+                    <a
+                        href="https://blog.naver.com/trustway_jun"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-[14px] font-semibold tracking-widest transition-colors hover:text-primary text-slate-600 uppercase"
                     >
-                        Insights
-                    </Link>*/}
+                        Blog
+                    </a>
                     <Link
                         href="/#contact"
                         className="ml-4 px-7 py-3 bg-primary text-white text-[13px] font-semibold tracking-[0.15em] uppercase hover:bg-primary/90 transition-colors shadow-sm"
@@ -92,10 +93,10 @@ export function Header() {
             {/* 모바일 햄버거 GNB 화면 오버레이 */}
             <div className={`md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-xl px-6 py-6 flex flex-col gap-6 transition-all duration-300 origin-top overflow-hidden transform ${isMenuOpen ? 'opacity-100 scale-y-100 max-h-screen' : 'opacity-0 scale-y-0 max-h-0'}`}>
                 <Link href="/about" className="text-[15px] font-semibold tracking-widest text-slate-800 uppercase border-b border-slate-100 pb-3">About</Link>
-                <Link href="/solution" className="text-[15px] font-semibold tracking-widest text-slate-800 uppercase border-b border-slate-100 pb-3">Solution</Link>
+                <Link href="/services" className="text-[15px] font-semibold tracking-widest text-slate-800 uppercase border-b border-slate-100 pb-3">Services</Link>
                 <Link href="/experts" className="text-[15px] font-semibold tracking-widest text-slate-800 uppercase border-b border-slate-100 pb-3">Expertise</Link>
                 <Link href="/location" className="text-[15px] font-semibold tracking-widest text-slate-800 uppercase border-b border-slate-100 pb-3">Location</Link>
-                <Link href="/insights" className="text-[15px] font-semibold tracking-widest text-slate-800 uppercase border-b border-slate-100 pb-3">Insights</Link>
+                <a href="https://blog.naver.com/trustway_jun" target="_blank" rel="noopener noreferrer" className="text-[15px] font-semibold tracking-widest text-slate-800 uppercase border-b border-slate-100 pb-3">Blog</a>
                 <Link href="/#contact" className="mt-4 text-center px-7 py-4 bg-primary text-white text-[14px] font-semibold tracking-[0.1em] rounded-sm uppercase hover:bg-primary/90 transition-colors shadow-sm">Contact</Link>
             </div>
         </header>

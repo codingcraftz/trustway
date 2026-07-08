@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { createClient } from "@/lib/supabase/client";
 
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -58,22 +57,15 @@ export function ContactForm() {
     });
 
     const onSubmit = async (data) => {
-        const supabase = createClient();
-        
         try {
-            const { error } = await supabase
-                .from('consulting_requests')
-                .insert([
-                    {
-                        name: data.name,
-                        phone: data.phone,
-                        category: data.category,
-                        privacy_consent: data.privacyConsent
-                    }
-                ]);
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
 
-            if (error) {
-                console.error("Supabase insert error:", error);
+            if (!res.ok) {
+                console.error("Contact submit error:", res.status);
                 alert("접수 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
                 return;
             }
@@ -92,7 +84,7 @@ export function ContactForm() {
                 <div className="w-full max-w-3xl animate-fade-in-up">
 
                     <div className="text-center mb-16 space-y-6">
-                        <p className="text-slate-400 font-mono text-xs tracking-[0.2em] uppercase">Private Booking</p>
+                        <p className="text-slate-400 font-mono text-xs tracking-[0.2em] uppercase">1:1 상담 예약</p>
                         <h2 className="text-3xl md:text-4xl font-sans font-light text-slate-900 tracking-tight break-keep">
                             당신만을 위한 <strong className="font-medium text-primary">전문적이고 깊이 있는 1:1 상담 예약</strong>
                         </h2>

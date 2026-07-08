@@ -201,7 +201,7 @@ export default async function ExpertDetailPage({ params }) {
                     <div className="fixed lg:sticky bottom-0 left-0 lg:left-1/2 right-0 w-full lg:w-1/2 bg-white/90 backdrop-blur-xl border-t border-slate-200 p-6 lg:p-8 z-50 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
                         <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
                             <div className="text-center sm:text-left hidden lg:block">
-                                <p className="text-[13px] font-black tracking-widest text-primary uppercase mb-1">Book a consultation</p>
+                                <p className="text-[13px] font-black tracking-widest text-primary uppercase mb-1">상담 예약</p>
                                 <p className="text-slate-500 font-semibold text-sm">트러스트웨이와 내일을 설계하세요.</p>
                             </div>
 

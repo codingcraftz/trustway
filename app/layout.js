@@ -12,8 +12,79 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "트러스트웨이 제주 | 당신의 내일을 설계하는 종합 금융 파트너",
-  description: "개인 재무설계, 연금·절세 전략부터 법인 경영컨설팅, 가업승계까지. 흔들림 없는 내일을 약속하는 종합 금융 파트너 트러스트웨이 제주입니다.",
+  metadataBase: new URL("https://www.trustway.kr"),
+  title: {
+    default: "트러스트웨이 제주 | 제주 재무설계·보험·자산관리 종합 금융 파트너",
+    template: "%s | 트러스트웨이 제주",
+  },
+  description:
+    "제주 재무설계, 제주도 보험 리모델링, 연금·절세, 자산관리·재테크까지. 증권·은행·보험 출신 전문가 팀이 제주도민의 자산을 통합 설계합니다. 트러스트웨이 제주본부.",
+  keywords: [
+    "제주 재무설계",
+    "제주도 보험",
+    "제주 보험 리모델링",
+    "제주 자산관리",
+    "제주도 재테크",
+    "제주 연금",
+    "제주 은퇴설계",
+    "제주 재무상담",
+    "제주 재무설계사",
+    "트러스트웨이 제주",
+    "제주 종합 금융 컨설팅",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    siteName: "트러스트웨이 제주",
+    url: "https://www.trustway.kr",
+    title: "트러스트웨이 제주 | 제주 재무설계·보험·자산관리 종합 금융 파트너",
+    description:
+      "제주 재무설계·보험·연금·자산관리를 한 곳에서. 증권·은행·보험 출신 전문가 팀, 트러스트웨이 제주본부.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    other: {
+      "naver-site-verification": process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION,
+    },
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  name: "트러스트웨이 제주본부",
+  description:
+    "제주 재무설계, 보험 리모델링, 연금·절세, 자산관리를 제공하는 종합 금융 컨설팅. 증권·은행·보험 출신 전문가 팀.",
+  url: "https://www.trustway.kr",
+  areaServed: { "@type": "AdministrativeArea", name: "제주특별자치도" },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "월랑로 81",
+    addressLocality: "제주시",
+    addressRegion: "제주특별자치도",
+    addressCountry: "KR",
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "18:00",
+  },
+  knowsAbout: [
+    "재무설계",
+    "보험 리모델링",
+    "연금",
+    "절세",
+    "자산관리",
+    "은퇴설계",
+    "법인 컨설팅",
+  ],
 };
 
 import { Header } from "@/components/shared/Header";
@@ -25,6 +96,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         {children}
         <Footer />

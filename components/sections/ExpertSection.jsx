@@ -13,7 +13,7 @@ export function ExpertSection() {
                     <div className="max-w-2xl">
                         <p className="text-blue-400 font-mono tracking-[0.2em] text-xs uppercase mb-6 flex items-center gap-3">
                             <span className="w-8 h-[1px] bg-blue-500"></span>
-                            Elite Partners
+                            최정예 파트너
                         </p>
                         <h2 className="text-3xl md:text-5xl font-sans font-light text-white tracking-tight break-keep leading-[1.2]">
                             오직 결과로 증명하는 <br />
@@ -25,7 +25,7 @@ export function ExpertSection() {
                             href="/experts"
                             className="group flex items-center gap-3 text-sm font-mono tracking-widest text-slate-400 hover:text-white transition-colors uppercase"
                         >
-                            View Full Profiles
+                            전문가 전체 보기
                             <span className="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center group-hover:border-slate-400 group-hover:bg-slate-800 transition-all">
                                 <ArrowUpRight className="w-4 h-4" />
                             </span>

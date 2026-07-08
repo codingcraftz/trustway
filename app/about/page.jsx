@@ -97,7 +97,7 @@ export default function AboutPage() {
               {
                 icon: <Network className="w-10 h-10 text-primary" />,
                 title: "Professional Network",
-                description: "노무사, 세무사, 변호사 등 각계 전문가 그룹과의 견고한 협업 방망을 통해 빈틈없는 솔루션을 제시합니다."
+                description: "노무사, 세무사, 변호사 등 각계 전문가 그룹과의 견고한 협업 망을 통해 빈틈없는 솔루션을 제시합니다."
               }
             ].map((item, idx) => (
               <motion.div key={idx} variants={fadeInUp}>

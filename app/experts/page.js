@@ -21,7 +21,7 @@ export default function ExpertsPage() {
 
                 <div className="relative z-20 mt-20 text-white space-y-6 max-w-4xl mx-auto">
                     <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200 py-2">
-                        Meet Our Experts
+전문가 소개
                     </h1>
                     <p className="text-xl md:text-2xl font-light text-blue-100 break-keep leading-relaxed max-w-2xl mx-auto">
                         최고의 전문성과 신뢰를 바탕으로<br />
