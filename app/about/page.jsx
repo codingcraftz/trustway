@@ -107,7 +107,7 @@ export default function AboutPage() {
                       {item.icon}
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                    <p className="text-slate-600 leading-relaxed font-light break-keep">
+                    <p className="text-slate-700 leading-relaxed break-keep">
                       {item.description}
                     </p>
                   </CardContent>
@@ -289,19 +289,19 @@ export default function AboutPage() {
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-left font-semibold text-slate-800">상담은 어떻게 진행되나요?</AccordionTrigger>
-                <AccordionContent className="text-slate-600 leading-relaxed font-light">
+                <AccordionContent className="text-slate-700 leading-relaxed">
                   고객님의 현재 재무 상태와 목표를 1차적으로 파악한 후, 전담 매니저가 매칭되어 심층 상담을 진행합니다. 필요시 세무사, 노무사 등 전문가 그룹과 협업하여 종합적인 솔루션을 제안해 드립니다.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
                 <AccordionTrigger className="text-left font-semibold text-slate-800">법인 컨설팅과 개인 자산관리의 차이점은 무엇인가요?</AccordionTrigger>
-                <AccordionContent className="text-slate-600 leading-relaxed font-light">
+                <AccordionContent className="text-slate-700 leading-relaxed">
                   개인 자산관리는 저축, 투자, 연금 등 개인의 재무 목표 달성에 초점을 맞추는 반면, 법인 컨설팅은 가업승계, M&A, CEO 퇴직플랜, 법인 자금 운용 등 기업의 지속적인 성장과 리스크 관리에 중점을 둡니다. 트러스트웨이는 두 분야 모두에 최적화된 전문가를 보유하고 있습니다.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-left font-semibold text-slate-800">기존에 가입한 보험이나 연금도 점검받을 수 있나요?</AccordionTrigger>
-                <AccordionContent className="text-slate-600 leading-relaxed font-light">
+                <AccordionContent className="text-slate-700 leading-relaxed">
                   네, 가능합니다. 기존 금융 상품의 보장 범위, 수익률, 세제 혜택 등을 객관적으로 분석하여 중복되거나 부족한 부분을 점검하고, 고객님의 현재 상황에 맞게 리모델링하는 컨설팅을 제공합니다.
                 </AccordionContent>
               </AccordionItem>
@@ -335,22 +335,22 @@ export default function AboutPage() {
             {[...Array(2)].map((_, i) => (
               <div key={i} className="flex gap-16 md:gap-24 items-center">
                 {/* 텍스트 기반 모의 파트너사 로고. 마우스 호버 시 컬러 변경 */}
-                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-70 hover:opacity-100 hover:text-[#ff6b00] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
+                <div className="text-xl md:text-3xl font-black tracking-tighter text-slate-600 hover:text-[#ff6b00] transition-colors cursor-default">
                   MIRAE ASSET
                 </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-70 hover:opacity-100 hover:text-[#0052a4] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
+                <div className="text-xl md:text-3xl font-black tracking-tighter text-slate-600 hover:text-[#0052a4] transition-colors cursor-default">
                   SAMSUNG LIFE
                 </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-70 hover:opacity-100 hover:text-[#ffca08] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
+                <div className="text-xl md:text-3xl font-black tracking-tighter text-slate-600 hover:text-[#ffca08] transition-colors cursor-default">
                   KB INSURANCE
                 </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-70 hover:opacity-100 hover:text-[#002f6c] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
+                <div className="text-xl md:text-3xl font-black tracking-tighter text-slate-600 hover:text-[#002f6c] transition-colors cursor-default">
                   HYUNDAI MARINE
                 </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-70 hover:opacity-100 hover:text-[#ed1c24] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
+                <div className="text-xl md:text-3xl font-black tracking-tighter text-slate-600 hover:text-[#ed1c24] transition-colors cursor-default">
                   HANWHA LIFE
                 </div>
-                <div className="text-xl md:text-3xl font-black tracking-tighter opacity-70 hover:opacity-100 hover:text-[#eb6100] transition-all duration-300 grayscale hover:grayscale-0 cursor-default">
+                <div className="text-xl md:text-3xl font-black tracking-tighter text-slate-600 hover:text-[#eb6100] transition-colors cursor-default">
                   DB INSURANCE
                 </div>
               </div>
