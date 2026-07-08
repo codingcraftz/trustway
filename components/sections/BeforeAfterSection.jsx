@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowDown } from "lucide-react";
+import { ArrowRight, ArrowDown, TrendingDown, TrendingUp } from "lucide-react";
 
 const rows = [
   {
@@ -18,11 +18,8 @@ const rows = [
   },
 ];
 
-const bottom = {
-  label: "매달 쌓이는 자산",
-  before: "0원",
-  after: "약 12만원 +",
-};
+const BEFORE_BARS = [58, 44, 32, 22, 13]; // 점점 사라짐
+const AFTER_BARS = [16, 28, 40, 52, 66]; // 점점 쌓임
 
 export function BeforeAfterSection() {
   return (
@@ -33,8 +30,8 @@ export function BeforeAfterSection() {
             Before &amp; After
           </span>
           <h2 className="mt-4 text-2xl md:text-4xl font-bold text-slate-900 break-keep">
-            트러스트웨이를 만나면,
-            <br className="sm:hidden" /> 이렇게 달라집니다
+            사라지던 보험료가,
+            <br className="sm:hidden" /> 자산이 됩니다
           </h2>
         </div>
 
@@ -45,22 +42,26 @@ export function BeforeAfterSection() {
               BEFORE · 지금
             </p>
             {rows.map((r, i) => (
-              <div
-                key={r.label}
-                className={
-                  i > 0 ? "border-t border-slate-200 pt-5 mt-5" : ""
-                }
-              >
+              <div key={r.label} className={i > 0 ? "border-t border-slate-200 pt-5 mt-5" : ""}>
                 <p className="text-sm text-slate-500 mb-1">{r.label}</p>
                 <p className="text-lg font-semibold text-slate-700 break-keep">
                   {r.before}
                 </p>
               </div>
             ))}
+            {/* viz: 사라짐 */}
             <div className="border-t border-slate-200 pt-6 mt-6">
-              <p className="text-sm text-slate-500 mb-1">{bottom.label}</p>
-              <p className="text-2xl font-bold text-slate-400">
-                {bottom.before}
+              <div className="flex items-end gap-2 h-[68px]">
+                {BEFORE_BARS.map((h, i) => (
+                  <div
+                    key={i}
+                    className="w-5 rounded-t bg-slate-300"
+                    style={{ height: `${h}px`, opacity: 1 - i * 0.15 }}
+                  />
+                ))}
+              </div>
+              <p className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-slate-500">
+                <TrendingDown className="w-4 h-4" /> 매달 사라지는 보험료
               </p>
             </div>
           </div>
@@ -78,22 +79,26 @@ export function BeforeAfterSection() {
               AFTER · 트러스트웨이
             </p>
             {rows.map((r, i) => (
-              <div
-                key={r.label}
-                className={
-                  i > 0 ? "border-t border-slate-100 pt-5 mt-5" : ""
-                }
-              >
+              <div key={r.label} className={i > 0 ? "border-t border-slate-100 pt-5 mt-5" : ""}>
                 <p className="text-sm text-primary/70 mb-1">{r.label}</p>
                 <p className="text-lg font-semibold text-slate-800 break-keep">
                   {r.after}
                 </p>
               </div>
             ))}
+            {/* viz: 쌓임 */}
             <div className="border-t border-slate-100 pt-6 mt-6">
-              <p className="text-sm text-primary/70 mb-1">{bottom.label}</p>
-              <p className="text-3xl font-extrabold text-primary">
-                {bottom.after}
+              <div className="flex items-end gap-2 h-[68px]">
+                {AFTER_BARS.map((h, i) => (
+                  <div
+                    key={i}
+                    className="w-5 rounded-t bg-primary"
+                    style={{ height: `${h}px` }}
+                  />
+                ))}
+              </div>
+              <p className="mt-4 flex items-center gap-1.5 text-sm font-bold text-primary">
+                <TrendingUp className="w-4 h-4" /> 자산으로 차곡차곡 쌓입니다
               </p>
             </div>
           </div>
