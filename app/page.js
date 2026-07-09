@@ -4,6 +4,7 @@ import { ValueSection } from "@/components/sections/ValueSection";
 import { LifeCycleSection } from "@/components/sections/LifeCycleSection";
 import { PhilosophySection } from "@/components/sections/PhilosophySection";
 import { ExpertSection } from "@/components/sections/ExpertSection";
+import { ProcessSection } from "@/components/sections/ProcessSection";
 import { ContactForm } from "@/components/sections/ContactForm";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <LifeCycleSection />
       <PhilosophySection />
       <ExpertSection />
+      <ProcessSection />
       <ContactForm />
     </main>
   );
