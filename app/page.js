@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/sections/HeroSection";
 import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
 import { ValueSection } from "@/components/sections/ValueSection";
+import { LifeCycleSection } from "@/components/sections/LifeCycleSection";
 import { PhilosophySection } from "@/components/sections/PhilosophySection";
 import { ExpertSection } from "@/components/sections/ExpertSection";
 import { ContactForm } from "@/components/sections/ContactForm";
@@ -11,6 +12,7 @@ export default function Home() {
       <HeroSection />
       <BeforeAfterSection />
       <ValueSection />
+      <LifeCycleSection />
       <PhilosophySection />
       <ExpertSection />
       <ContactForm />
