@@ -243,12 +243,14 @@ export default async function MobileCardTestPage({ params }) {
                 </div>
 
                 {/* 하단 강력한 플로팅 액션 버튼 (애플 스타일의 둥근 플로팅 바) */}
-                <div className="absolute bottom-6 left-5 right-5 z-20 flex flex-col items-center">
-                    <a href={kakaoLink ? kakaoLink.url : "#"} target={kakaoLink ? "_blank" : "_self"} className="w-full bg-[#E6D5B8] text-black py-[16px] rounded-[18px] text-[16px] font-extrabold tracking-tight active:scale-[0.97] transition-all flex items-center justify-center gap-2 shadow-[0_10px_40px_rgba(230,213,184,0.3)]">
-                        <MessageCircle className="w-5 h-5 fill-black" strokeWidth={2} />
-                        1:1 카카오톡 상담 예약
-                    </a>
-                </div>
+                {kakaoLink && (
+                    <div className="absolute bottom-6 left-5 right-5 z-20 flex flex-col items-center">
+                        <a href={kakaoLink.url} target="_blank" className="w-full bg-[#E6D5B8] text-black py-[16px] rounded-[18px] text-[16px] font-extrabold tracking-tight active:scale-[0.97] transition-all flex items-center justify-center gap-2 shadow-[0_10px_40px_rgba(230,213,184,0.3)]">
+                            <MessageCircle className="w-5 h-5 fill-black" strokeWidth={2} />
+                            1:1 카카오톡 상담 예약
+                        </a>
+                    </div>
+                )}
 
                 {/* 시스템 홈바 영역 */}
                 <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-[35%] h-[5px] bg-white/30 rounded-full z-50 pointer-events-none" />

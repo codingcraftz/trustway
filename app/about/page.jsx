@@ -217,7 +217,7 @@ export default function AboutPage() {
             <p className="text-slate-500 text-lg">최고의 전문성을 갖춘 트러스트웨이의 리더들</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {experts.map((expert, idx) => (
               <motion.div
                 key={expert.id}
@@ -245,12 +245,6 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <CardContent className="p-6">
-                    {/* 박준영 팀장인 경우 특별한 키워드 강조를 추가 (id 기준, 강경서/고정길 등) */}
-                    {expert.name === '박준영' && (
-                      <div className="mb-4 inline-block bg-blue-50 text-primary px-3 py-1 rounded-full text-xs font-semibold tracking-wide">
-                        수학적 논리와 개발자적 정교함
-                      </div>
-                    )}
                     <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3">
                       {expert.description}
                     </p>

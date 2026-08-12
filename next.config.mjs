@@ -5,6 +5,20 @@ const nextConfig = {
       bodySizeLimit: '10mb',
     },
   },
+  async redirects() {
+    return [
+      {
+        source: '/experts/park-jun-young',
+        destination: '/experts',
+        permanent: true,
+      },
+      {
+        source: '/experts/park-jun-young/:path*',
+        destination: '/experts',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

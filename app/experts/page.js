@@ -33,7 +33,7 @@ export default function ExpertsPage() {
             {/* Contemporary Bento / Hover Grid Section */}
             <section className="py-24 md:py-32 bg-slate-50 relative z-30 -mt-8 rounded-t-[3rem] shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24 max-w-[1400px]">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
                         {experts.map((expert) => (
                             <Link href={`/experts/${expert.id}`} key={expert.id} className="group block focus:outline-none h-[500px]">
                                 <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-xl transition-all duration-700 ease-out hover:shadow-[0_20px_50px_rgba(3,18,66,0.3)] hover:-translate-y-2 bg-slate-200">

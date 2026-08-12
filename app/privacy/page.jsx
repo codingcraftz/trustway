@@ -66,8 +66,8 @@ export default function PrivacyPage() {
           </Section>
 
           <Section n={7} title="개인정보 보호책임자 / 문의">
-            <p>· 담당: 박준영</p>
-            <p>· 연락처: 010-7977-1248</p>
+            <p>· 담당: 고정길</p>
+            <p>· 연락처: trustway_ko@naver.com</p>
             <p>· 소속: 구름섬컴퍼니 · 트러스트웨이 제주본부</p>
             <p>· 주소: 제주특별자치도 제주시 노형동 2733-1</p>
           </Section>

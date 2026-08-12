@@ -65,7 +65,6 @@ export function Header() {
                 <Link href="/experts" className="text-[15px] font-semibold text-slate-800 border-b border-slate-100 pb-3">전문가</Link>
                 <Link href="/cases" className="text-[15px] font-semibold text-slate-800 border-b border-slate-100 pb-3">상담사례</Link>
                 <Link href="/location" className="text-[15px] font-semibold text-slate-800 border-b border-slate-100 pb-3">오시는 길</Link>
-                <a href="https://blog.naver.com/trustway_jun" target="_blank" rel="noopener noreferrer" className="text-[15px] font-semibold text-[#03C75A] border-b border-slate-100 pb-3">블로그 →</a>
                 <Link href="/#contact" className="mt-4 text-center px-7 py-4 bg-primary text-white text-[14px] font-semibold rounded-sm hover:bg-primary/90 transition-colors shadow-sm">상담문의</Link>
             </div>
         </header>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MessageCircle, BookOpen } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 export function FloatingContact() {
   const pathname = usePathname();
@@ -19,18 +19,6 @@ export function FloatingContact() {
 
   return (
     <div className="fixed bottom-6 right-6 z-[60] flex flex-col items-end gap-3">
-      {/* 네이버 블로그 */}
-      <a
-        href="https://blog.naver.com/trustway_jun"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="네이버 블로그 바로가기"
-        className="inline-flex items-center gap-2 rounded-full bg-[#03C75A] px-5 py-3.5 text-white shadow-lg shadow-[#03C75A]/30 transition-transform hover:scale-105"
-      >
-        <BookOpen className="h-5 w-5" />
-        <span className="text-sm font-bold">블로그</span>
-      </a>
-
       {/* 상담 문의 */}
       <Link
         href="/#contact"

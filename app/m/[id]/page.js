@@ -5,10 +5,10 @@ import { MessageCircle, ExternalLink, Calculator } from "lucide-react";
 // TEST MOCK 데이터
 const MOCK_EXPERT = {
   id: "test-expert",
-  name: "박준영",
+  name: "테스트 전문가",
   title: "금융투자전문가",
   slogan: "수학적 정교함으로 설계하는 오차 없는 재무 포트폴리오",
-  company: "트러스트웨이 제주 팀장",
+  company: "트러스트웨이 제주본부",
   profileImage: "/img/프로필_고정길.png", // 여기에 본인 사진 경로
   backgroundImage: "/img/bg_sample.png",   // 감성적인 배경 사진 경로
   links: [
@@ -28,11 +28,6 @@ const MOCK_EXPERT = {
       subTitle: "부자들의 강력한 재테크 비밀, 복리의 힘!",
       url: "#",
       thumbnail: "/img/icon_calc.png"
-    },
-    {
-      title: "연락하기",
-      url: "https://pf.kakao.com/...", // 카카오톡 링크
-      type: "kakao"
     }
   ]
 };

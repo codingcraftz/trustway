@@ -33,7 +33,7 @@ export function ExpertSection() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 max-w-4xl mx-auto">
                     {experts.map((expert, idx) => (
                         <Link href={`/experts/${expert.id}`} key={expert.id} className={`group block focus:outline-none h-[500px] animate-fade-in-up delay-${(idx + 2) * 100}`}>
                             <div className="relative w-full h-full border border-slate-800 bg-[#050f2e] overflow-hidden transition-all duration-500 group-hover:border-blue-900/50 flex flex-col justify-end p-8">
